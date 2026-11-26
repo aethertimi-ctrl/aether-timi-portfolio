@@ -21,7 +21,7 @@
   <meta name="twitter:image" content="https://aether-timi-portfolio.vercel.app/og-image.png">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ProfessionalService","name":"Aether Timi","description":"AI-assisted digital agency creating websites, interactive digital experiences and brand identities.","url":"https://aether-timi-portfolio.vercel.app/","logo":"https://aether-timi-portfolio.vercel.app/assets/logo-symbol-dark.svg","email":"mailto:aethertimi@gmail.com","telephone":"+2348139342375","areaServed":"Worldwide","address":{"@type":"PostalAddress","addressCountry":"NG"},"founder":{"@type":"Person","name":"Timi","jobTitle":"Web developer"},"sameAs":["https://github.com/aethertimi-ctrl","https://x.com/AetherTimi","https://www.linkedin.com/in/aether-timi"]}
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"Aether Timi","description":"AI-assisted digital agency creating websites, interactive digital experiences and brand identities.","url":"https://aether-timi-portfolio.vercel.app/","logo":"https://aether-timi-portfolio.vercel.app/assets/logo-symbol-dark.svg","email":"mailto:aethertimi@gmail.com","telephone":"+2348139342375","areaServed":"Worldwide","address":{"@type":"PostalAddress","addressCountry":"NG"},"founder":{"@type":"Person","name":"Timi","jobTitle":"Founder and web developer","image":"https://aether-timi-portfolio.vercel.app/assets/founder-portrait.webp"},"sameAs":["https://github.com/aethertimi-ctrl","https://x.com/AetherTimi","https://www.linkedin.com/in/aether-timi"]}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,6 +38,7 @@
   <style>
     :root{
       color-scheme:dark;
+      --accent:var(--cyan);
       --bg:#080D1A; --panel:#10192B; --panel2:#0D1525; --blue:#4C8DFF; --cyan:#69D8FF;
       --text:#F4F7FF; --muted:#9BAAC3; --line:rgba(174,197,235,.14); --mint:#65E0B3;
       --radius:22px; --max:1160px; --ease:cubic-bezier(.2,.8,.2,1);
@@ -364,6 +365,22 @@
       :root[data-theme="light"] .nav-links{background:#F4F7FD}
     }
 
+
+    /* founder */
+    .founder-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:center}
+    .founder-image{position:relative;margin:0;max-width:440px;isolation:isolate}
+    .founder-image::before{content:"";position:absolute;inset:-12px;border:1px solid var(--blue);border-radius:28px;opacity:.4;z-index:-1;transition:inset .5s var(--ease),opacity .5s}
+    .founder-image:hover::before{inset:-18px;opacity:.7}
+    .founder-image img{width:100%;height:auto;display:block;aspect-ratio:4/5;object-fit:cover;object-position:center 35%;border-radius:18px;box-shadow:0 30px 70px rgba(0,0,0,.4)}
+    .image-label{position:absolute;bottom:18px;left:18px;padding:9px 16px;border-radius:999px;background:rgba(5,17,33,.82);border:1px solid rgba(105,216,255,.4);color:#F4F7FF;font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+    .founder-content h3{font-size:21px;letter-spacing:-.01em;margin:26px 0 6px}
+    .founder-meta{color:var(--accent);font-size:13px;font-weight:500;margin-bottom:16px}
+    .founder-copy{color:var(--muted);line-height:1.85;font-size:16px;max-width:560px}
+    .founder-skills{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0}
+    .founder-content blockquote{margin:0 0 30px;padding:2px 0 2px 18px;border-left:3px solid var(--blue);color:var(--accent);font:600 18px/1.5 var(--head)}
+    :root[data-theme="light"] .founder-image img{box-shadow:0 24px 60px rgba(24,48,102,.22)}
+    @media (max-width:900px){.founder-grid{grid-template-columns:1fr;gap:48px}.founder-image{width:min(100%,380px);margin-inline:auto}}
+
     /* motion */
     .js .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
     .js .reveal.visible{opacity:1;transform:none}
@@ -555,7 +572,7 @@
       <div class="container">
         <div class="card about-panel reveal">
           <div><div class="kicker">The Aether Timi approach</div><h2>Technology with a <span class="gradient">human perspective.</span></h2>
-            <p>Aether Timi is an independent digital agency built around a simple belief: technology should make good ideas more powerful. We combine creative direction, modern development tools and AI-assisted workflows while keeping human judgement at the centre of every decision.</p><p>I'm Timi, the developer behind Aether Timi. I'm based in Nigeria, work with clients anywhere, and build in HTML, CSS, JavaScript and TypeScript, publishing on Vercel and GitHub Pages so your site stays online and loads fast on a phone.</p></div>
+            <p>Aether Timi is an independent digital agency built around a simple belief: technology should make good ideas more powerful. We combine creative direction, modern development tools and AI-assisted workflows while keeping human judgement at the centre of every decision.</p></div>
           <div class="principles">
             <div class="principle"><span class="check" aria-hidden="true">✦</span><div><strong>Purpose before decoration</strong><span class="d">Design choices support a clear goal.</span></div></div>
             <div class="principle"><span class="check" aria-hidden="true">✦</span><div><strong>Built for real devices</strong><span class="d">Responsive experiences across screen sizes.</span></div></div>
@@ -565,6 +582,26 @@
         </div>
       </div>
     </section>
+
+    <section id="founder" aria-labelledby="founder-title">
+      <div class="container founder-grid">
+        <figure class="founder-image reveal">
+          <img src="assets/founder-portrait.webp" width="880" height="1100" alt="Timi, founder of Aether Timi" loading="lazy" decoding="async">
+          <figcaption class="image-label">The Founder</figcaption>
+        </figure>
+        <div class="founder-content reveal" style="--d:.12s">
+          <div class="kicker">The mind behind the vision</div>
+          <h2 id="founder-title">Turning ideas into <span class="gradient">digital experiences.</span></h2>
+          <h3>The person behind Aether Timi.</h3>
+          <p class="founder-meta">Timi · Based in Nigeria · Working with clients anywhere</p>
+          <p class="founder-copy">I believe every great digital experience starts with an idea worth bringing to life. Through thoughtful website design, modern development and creative innovation, I build digital experiences that help businesses establish their presence and stand out online.</p>
+          <div class="founder-skills"><span class="tag">Website Design</span><span class="tag">Web Development</span><span class="tag">Digital Innovation</span></div>
+          <blockquote>"We Transform Ideas Into Digital Experiences."</blockquote>
+          <a class="btn btn-primary" href="#contact">Let's build something meaningful <span class="arr" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
 
     <section style="padding-top:0">
       <div class="container">
@@ -688,11 +725,11 @@
       });
       navLinks.addEventListener('mouseleave', function(){moveInd(activeLink)});
       window.addEventListener('resize', function(){moveInd(activeLink)});
-      var ids = ['home','services','work','process','about','contact'];
+      var ids = ['home','services','work','process','about','founder','contact'];
       var secs = ids.map(function(i){return document.getElementById(i)}).filter(Boolean);
       if ('IntersectionObserver' in window) {
         var spy = new IntersectionObserver(function(entries){
-          entries.forEach(function(en){ if(en.isIntersecting) setActive(en.target.id); });
+          entries.forEach(function(en){ if(en.isIntersecting) setActive(en.target.id === 'founder' ? 'about' : en.target.id); });
         }, {rootMargin:'-45% 0px -50% 0px'});
         secs.forEach(function(s){spy.observe(s)});
       }
