@@ -1,481 +1,634 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#2338ff" />
-  <title>Aether Timi — Websites for birthdays, weddings and events</title>
-  <meta name="description" content="Timi builds birthday, wedding, proposal and event websites. Based in Nigeria, working with clients anywhere. Message on WhatsApp to start." />
-  <link rel="canonical" href="https://aether-timi-portfolio.vercel.app/" />
-  <meta property="og:title" content="Aether Timi — Websites for the days worth celebrating" />
-  <meta property="og:description" content="Birthday, wedding, proposal and event websites you can share with one link." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://aether-timi-portfolio.vercel.app/" />
-  <meta property="og:image" content="https://aether-timi-portfolio.vercel.app/og-image.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Aether Timi. Websites for the days worth celebrating." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@AetherTimi" />
-  <meta name="twitter:image" content="https://aether-timi-portfolio.vercel.app/og-image.png" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232338FF'/%3E%3Ctext x='32' y='45' font-size='36' font-family='Arial' font-weight='700' fill='white' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080D1A">
+  <title>Aether Timi — Digital Experiences, Intelligently Crafted</title>
+  <meta name="description" content="Aether Timi is an AI-assisted digital agency. We transform ambitious ideas into extraordinary digital experiences: websites, interactive experiences and brand identities.">
+  <link rel="canonical" href="https://aether-timi-portfolio.vercel.app/">
+  <meta property="og:title" content="Aether Timi — Digital Experiences, Intelligently Crafted">
+  <meta property="og:description" content="We transform ambitious ideas into extraordinary digital experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aether-timi-portfolio.vercel.app/">
+  <meta property="og:image" content="https://aether-timi-portfolio.vercel.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Aether Timi — digital agency. We transform ambitious ideas into extraordinary digital experiences.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@AetherTimi">
+  <meta name="twitter:image" content="https://aether-timi-portfolio.vercel.app/og-image.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Person","name":"Aether Timi","jobTitle":"Web developer","url":"https://aether-timi-portfolio.vercel.app/","email":"mailto:aethertimi@gmail.com","sameAs":["https://github.com/aethertimi-ctrl","https://x.com/AetherTimi","https://www.linkedin.com/in/aether-timi"]}
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"Aether Timi","description":"AI-assisted digital agency creating websites, interactive digital experiences and brand identities.","url":"https://aether-timi-portfolio.vercel.app/","logo":"https://aether-timi-portfolio.vercel.app/assets/logo-symbol-dark.svg","email":"mailto:aethertimi@gmail.com","telephone":"+2348139342375","areaServed":"Worldwide","address":{"@type":"PostalAddress","addressCountry":"NG"},"founder":{"@type":"Person","name":"Timi","jobTitle":"Web developer"},"sameAs":["https://github.com/aethertimi-ctrl","https://x.com/AetherTimi","https://www.linkedin.com/in/aether-timi"]}
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js');</script>
   <style>
     :root{
-      --cobalt:#2338ff; --ink:#0b0c24; --paper:#f5f6fa; --white:#fff; --sun:#ffd23f; --muted:#464966;
-      --display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
-      --text:"Newsreader",Georgia,"Times New Roman",serif;
+      --bg:#080D1A; --panel:#10192B; --panel2:#0D1525; --blue:#4C8DFF; --cyan:#69D8FF;
+      --text:#F4F7FF; --muted:#9BAAC3; --line:rgba(174,197,235,.14); --mint:#65E0B3;
+      --radius:22px; --max:1160px; --ease:cubic-bezier(.2,.8,.2,1);
+      --head:"Space Grotesk",system-ui,sans-serif; --body:"DM Sans",system-ui,sans-serif;
     }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:24px}
-    body{margin:0;background:var(--paper);color:var(--ink);font:400 1.125rem/1.6 var(--text);-webkit-font-smoothing:antialiased}
-    h1,h2,h3,p,ol,ul,figure{margin:0}
-    ol,ul{padding:0;list-style:none}
-    a{color:inherit}
-    img,svg{display:block;max-width:100%}
-    .wrap{width:min(1180px,100% - 48px);margin-inline:auto}
-    .band{padding-block:clamp(64px,9vw,128px)}
-    .on-cobalt{background:var(--cobalt);color:var(--white)}
-    .on-ink{background:var(--ink);color:var(--white)}
-    .skip{position:absolute;left:16px;top:-80px;background:var(--sun);color:var(--ink);padding:10px 16px;font:700 .9rem var(--display);z-index:60}
-    .skip:focus{top:12px}
-    :focus-visible{outline:3px solid var(--sun);outline-offset:3px}
-    .on-paper :focus-visible,.paper-sheet :focus-visible{outline-color:var(--cobalt)}
+    html{scroll-behavior:smooth;scroll-padding-top:92px;overflow-x:clip}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.65;overflow-x:clip;-webkit-font-smoothing:antialiased}
+    img,svg{max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0}
+    p{margin:0}
+    :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:8px}
+    .container{width:min(var(--max),calc(100% - 44px));margin-inline:auto}
+    .skip{position:absolute;left:-999px;top:10px;z-index:100;background:var(--cyan);color:#06101F;padding:10px 16px;border-radius:10px;font-weight:700}
+    .skip:focus{left:12px}
+    .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-    /* shared type */
-    .display{font-family:var(--display);font-weight:800;letter-spacing:-.035em;line-height:.96}
-    h2.display{font-size:clamp(2.4rem,5.4vw,4.4rem)}
-    .lede{font-size:clamp(1.15rem,1.6vw,1.35rem);max-width:34em}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;border:2px solid transparent;font:700 1rem/1 var(--display);text-decoration:none;cursor:pointer;transition:transform .15s}
-    .btn:hover{transform:translateY(-2px)}
-    .btn-sun{background:var(--sun);color:var(--ink)}
-    .btn-ink{background:var(--ink);color:var(--white)}
-    .btn-line{background:transparent;border-color:currentColor;color:inherit}
-    .textlink{font:700 1rem var(--display);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px}
-    .on-paper .textlink{color:var(--cobalt)}
+    /* ambient background */
+    .ambient{position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+      radial-gradient(60% 50% at 80% 0%,rgba(37,99,235,.22),transparent 70%),
+      radial-gradient(40% 40% at 0% 45%,rgba(0,194,255,.08),transparent 70%),
+      linear-gradient(180deg,#080D1A 0%,#0A1120 55%,#080D1A 100%)}
+    .progress{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--blue),var(--cyan));z-index:70}
 
-    /* header */
-    .site-header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:22px}
-    .wordmark{font:800 1.5rem var(--display);letter-spacing:-.04em;text-decoration:none}
-    .nav{display:flex;align-items:center;gap:30px;font:500 1.05rem var(--display)}
-    .nav a{text-decoration:none}
-    .nav a:not(.btn):hover{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
-    .menu-btn{display:none;background:none;border:2px solid currentColor;color:inherit;border-radius:999px;padding:9px 16px;font:700 .95rem var(--display);cursor:pointer}
+    /* navigation */
+    .nav-wrap{position:sticky;top:0;z-index:60;background:rgba(8,13,26,.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center}
+    .brand img{display:block;height:36px;width:auto}
+    .nav-links{position:relative;display:flex;align-items:center;gap:6px;font-size:14px;font-weight:500}
+    .nav-links a{position:relative;padding:8px 14px;color:#C5D0E3;transition:color .25s}
+    .nav-links a:hover,.nav-links a[aria-current="true"]{color:#fff}
+    .nav-ind{position:absolute;bottom:0;left:0;height:2px;width:0;border-radius:2px;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:transform .4s var(--ease),width .4s var(--ease);box-shadow:0 0 12px rgba(105,216,255,.7)}
+    .menu-btn{display:none;background:rgba(255,255,255,.03);border:1px solid var(--line);color:#fff;border-radius:12px;width:44px;height:44px;cursor:pointer}
+    .menu-btn span{display:block;width:18px;height:2px;background:currentColor;margin:4px auto;border-radius:2px;transition:transform .3s var(--ease),opacity .2s}
+    .menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+    .menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+    /* buttons */
+    .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 24px;border-radius:999px;font-size:14px;font-weight:700;border:1px solid transparent;cursor:pointer;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s,border-color .3s,background .3s}
+    .btn .arr{display:inline-block;transition:transform .3s var(--ease)}
+    .btn:hover .arr{transform:translate(3px,-3px)}
+    .btn-down:hover .arr{transform:translateY(3px)}
+    .btn-primary{background:linear-gradient(110deg,#3477F6,#53BFFF);color:#06101F;box-shadow:0 10px 30px rgba(46,119,246,.25)}
+    .btn-primary::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-120%);transition:transform .7s var(--ease)}
+    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(46,119,246,.4)}
+    .btn-primary:hover::after{transform:translateX(120%)}
+    .btn:active{transform:translateY(0) scale(.98)}
+    .btn-outline{border-color:rgba(174,197,235,.3);background:rgba(255,255,255,.03);color:var(--text)}
+    .btn-outline:hover{border-color:var(--cyan);background:rgba(105,216,255,.08);transform:translateY(-3px)}
 
     /* hero */
-    .hero{padding-bottom:clamp(56px,8vw,110px)}
-    .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(32px,5vw,80px);align-items:center;padding-top:clamp(24px,4vw,56px)}
-    .hero h1{font-size:clamp(3.1rem,7.6vw,6.9rem)}
-    .hero .lede{margin-top:28px;color:rgba(255,255,255,.92)}
-    .hero-actions{display:flex;align-items:center;gap:26px;flex-wrap:wrap;margin-top:34px}
+    .hero{position:relative;padding:104px 0 96px;isolation:isolate;overflow:clip}
+    .hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+      background-image:linear-gradient(rgba(174,197,235,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(174,197,235,.07) 1px,transparent 1px);
+      background-size:56px 56px;-webkit-mask-image:radial-gradient(70% 70% at 70% 35%,#000,transparent 75%);mask-image:radial-gradient(70% 70% at 70% 35%,#000,transparent 75%)}
+    .glow{position:absolute;border-radius:50%;pointer-events:none;z-index:-1;will-change:transform}
+    .glow.g1{width:620px;height:620px;right:-140px;top:-160px;background:radial-gradient(circle,rgba(37,99,235,.42),transparent 68%)}
+    .glow.g2{width:460px;height:460px;left:-180px;bottom:-60px;background:radial-gradient(circle,rgba(0,194,255,.16),transparent 68%)}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:48px}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid rgba(105,216,255,.25);border-radius:999px;background:rgba(105,216,255,.06);color:#9DE7FF;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+    .pulse{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 12px var(--mint);animation:pulse 2.4s ease-in-out infinite}
+    h1{font-size:clamp(42px,6.2vw,76px);letter-spacing:-.05em;margin:26px 0 22px;max-width:720px}
+    h1 .w{display:inline-block}
+    h1 .gradient{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:inherit}
+    h1 .gradient .w{-webkit-background-clip:text;background-clip:text;color:transparent;background-image:linear-gradient(100deg,#fff,#BCD3FF)}
+    h1 .gradient .w:nth-child(2){background-image:linear-gradient(100deg,#BCD3FF,#91B8FF)}
+    h1 .gradient .w:nth-child(3){background-image:linear-gradient(100deg,#91B8FF,#7FC9FF)}
+    h1 .gradient .w:nth-child(4){background-image:linear-gradient(100deg,#7FC9FF,#69D8FF)}
+    .gradient{background:linear-gradient(100deg,#fff 6%,#91B8FF 48%,#69D8FF 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero-copy{max-width:560px;color:var(--muted);font-size:17px;margin-bottom:32px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .micro-trust{display:flex;align-items:center;gap:14px;margin-top:36px;color:#8292AD;font-size:12px}
+    .micro-line{height:1px;width:38px;background:var(--blue)}
 
-    .stage{display:flex;flex-direction:column;align-items:center;gap:18px}
-    .phone{--card-bg:#ff9ec4;--card-fg:#3a0f2a;--card-accent:#fff;position:relative;overflow:hidden;width:min(320px,80vw);aspect-ratio:9/12.5;border-radius:34px;border:8px solid var(--ink);background:var(--card-bg);color:var(--card-fg);box-shadow:0 30px 60px -20px rgba(5,8,70,.6);transform:rotate(-2deg);container-type:inline-size;transition:background .35s,color .35s;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
-    .phone[data-theme="wedding"]{--card-bg:#e9dcc3;--card-fg:#3e3226;--card-accent:#b08a5b}
-    .phone[data-theme="proposal"]{--card-bg:#d93a52;--card-fg:#fff;--card-accent:#ffd9df}
-    .phone[data-theme="party"]{--card-bg:#0b0c24;--card-fg:#fff;--card-accent:#5de7e8}
-    @keyframes rise{from{opacity:0;transform:translateY(46px) rotate(6deg)}to{opacity:1;transform:rotate(-2deg)}}
-    .phone-body{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:14cqi 9cqi 9cqi;cursor:pointer}
-    .phone-kicker{font:500 7.2cqi/1.2 var(--display)}
-    .phone-name{font:800 22cqi/.92 var(--display);letter-spacing:-.04em;overflow-wrap:anywhere;margin-top:3cqi;transition:font-size .2s}
-    .phone[data-long="true"] .phone-name{font-size:15cqi}
-    .phone-tabs{display:flex;gap:8px;flex-wrap:wrap}
-    .phone-tabs span{border:2px solid var(--card-fg);border-radius:999px;padding:5px 14px;font:700 5.6cqi var(--display)}
-    .phone-tabs span:first-child{background:var(--card-fg);color:var(--card-bg)}
-    .confetti{position:absolute;left:50%;top:42%;width:9px;height:14px;border-radius:2px;pointer-events:none}
+    .visual{position:relative;min-height:500px;display:grid;place-items:center;perspective:1000px}
+    .orb{position:absolute;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(105,216,255,.5),rgba(37,99,235,.16) 38%,rgba(37,99,235,.02) 70%);box-shadow:inset 0 0 70px rgba(76,141,255,.2),0 0 110px rgba(37,99,235,.18);animation:breathe 9s ease-in-out infinite}
+    .orbit{position:absolute;left:50%;top:50%;border:1px solid rgba(105,216,255,.3);border-radius:50%;translate:-50% -50%}
+    .orbit.o1{width:430px;height:200px;rotate:-28deg}
+    .orbit.o2{width:460px;height:270px;rotate:48deg;border-color:rgba(76,141,255,.25)}
+    .orbit.o3{width:470px;height:470px;border-style:dashed;border-color:rgba(105,216,255,.14);animation:spin 40s linear infinite}
+    .orbit.o3 i{position:absolute;top:-5px;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--cyan);box-shadow:0 0 16px var(--cyan)}
+    .core-card{position:relative;width:min(100%,350px);padding:24px;border:1px solid rgba(153,190,255,.26);border-radius:26px;background:linear-gradient(145deg,rgba(21,35,60,.92),rgba(10,18,33,.88));box-shadow:0 28px 90px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.08);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transform:rotate(-4deg);animation:float 7s ease-in-out infinite}
+    .tilt-inner{transition:transform .2s ease-out;transform-style:preserve-3d}
+    .card-top{display:flex;justify-content:space-between;align-items:center;color:#A8B8D2;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+    .dots{display:flex;gap:5px}.dots i{width:5px;height:5px;border-radius:50%;background:#5D9BFF}
+    .mini-screen{margin:22px 0 18px;padding:18px;border-radius:16px;background:linear-gradient(140deg,#172B4D,#0D1729);border:1px solid rgba(255,255,255,.08)}
+    .screen-line{height:7px;border-radius:8px;background:rgba(181,207,255,.2);margin:9px 0;width:72%}
+    .screen-line.big{height:16px;width:90%;background:linear-gradient(90deg,#77A9FF,#69D8FF);position:relative;overflow:hidden}
+    .screen-line.big::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:translateX(-100%);animation:sheen 4.5s ease-in-out infinite 1.2s}
+    .screen-line.short{width:48%}
+    .screen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
+    .screen-grid span{height:52px;border-radius:9px;background:rgba(110,160,255,.14)}
+    .screen-grid span:nth-child(2){background:linear-gradient(135deg,#2F6BEA,#53BFFF)}
+    .card-bottom{display:flex;justify-content:space-between;color:#C5D0E3;font-size:12px}
+    .status{color:var(--mint);font-size:10px;letter-spacing:.1em;font-weight:500}
+    .chip{position:absolute;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:rgba(16,25,43,.78);border:1px solid rgba(105,216,255,.35);font-size:12px;font-weight:500;box-shadow:0 14px 34px rgba(0,0,0,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+    .chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+    .chip.c1{right:2%;top:7%;animation:float 6s ease-in-out infinite .6s}
+    .chip.c2{left:0;bottom:9%;animation:float 8s ease-in-out infinite 1.4s}
+    .shard{position:absolute;width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,rgba(105,216,255,.35),rgba(76,141,255,.05));border:1px solid rgba(105,216,255,.3);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);right:6%;bottom:14%;transform:rotate(18deg);animation:floatR 9s ease-in-out infinite}
 
-    .controls{width:min(320px,80vw);display:grid;gap:12px}
-    .field-label{font:700 .95rem var(--display);display:block;margin-bottom:6px}
-    .controls input[type="text"]{width:100%;padding:12px 14px;border-radius:12px;border:2px solid var(--white);background:rgba(255,255,255,.12);color:var(--white);font:500 1.05rem var(--display)}
-    .controls input[type="text"]::placeholder{color:rgba(255,255,255,.7)}
-    .chips{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-    .chips legend{padding:0;font:700 .95rem var(--display);margin-bottom:6px}
-    .chip{position:relative}
-    .chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-    .chip span{display:block;padding:7px 11px;border-radius:999px;border:2px solid var(--white);font:700 .85rem var(--display)}
-    .controls .btn{justify-content:center}
-    .chip input:checked + span{background:var(--white);color:var(--cobalt)}
-    .chip input:focus-visible + span{outline:3px solid var(--sun);outline-offset:3px}
+    /* stats */
+    .stats{border-block:1px solid var(--line);background:rgba(16,25,43,.5)}
+    .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:36px 0}
+    .stat strong{display:block;font:700 28px/1.2 var(--head)}
+    .stat span{color:var(--muted);font-size:14px}
+
+    /* sections */
+    section{padding:112px 0;position:relative}
+    .section-head{max-width:760px;margin-bottom:56px}
+    .kicker{display:inline-flex;align-items:center;gap:10px;color:var(--cyan);font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:16px}
+    .kicker::before{content:"";width:28px;height:1px;background:var(--cyan)}
+    h2{font-size:clamp(32px,4.4vw,52px);letter-spacing:-.04em}
+    .section-head p{color:var(--muted);font-size:17px;margin-top:18px;max-width:640px}
+
+    /* gradient border + elevation cards */
+    .card{position:relative;border-radius:var(--radius);background:linear-gradient(160deg,rgba(21,33,57,.85),rgba(13,21,37,.85));transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+    .card::before{content:"";position:absolute;inset:0;padding:1px;border-radius:inherit;pointer-events:none;background:linear-gradient(140deg,rgba(105,216,255,.5),rgba(76,141,255,.07) 40%,rgba(76,141,255,.3));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);opacity:.55;transition:opacity .4s}
+    .card:hover{box-shadow:0 30px 70px rgba(0,0,0,.45),0 0 60px rgba(76,141,255,.12)}
+    .card:hover::before{opacity:1}
+    .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .service{padding:30px 26px;display:flex;flex-direction:column}
+    .service-icon{width:50px;height:50px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(76,141,255,.22),rgba(105,216,255,.08));border:1px solid rgba(105,216,255,.25);color:var(--cyan);margin-bottom:24px}
+    .service-icon svg{width:24px;height:24px}
+    .service h3{font-size:21px;letter-spacing:-.02em;margin-bottom:12px}
+    .service p{color:var(--muted);font-size:14.5px;margin-bottom:20px}
+    .service ul{list-style:none;margin:auto 0 0;padding:18px 0 0;border-top:1px solid var(--line);display:grid;gap:9px;font-size:13.5px;color:#C5D0E3}
+    .service li{display:flex;gap:10px;align-items:flex-start}
+    .service li::before{content:"";flex:none;width:6px;height:6px;margin-top:9px;border-radius:50%;background:var(--blue)}
 
     /* work */
-    .work-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(20px,4vw,48px)}
-    .work-head p{color:var(--muted);max-width:30em}
-    .piece{display:grid;grid-template-columns:repeat(12,1fr);column-gap:clamp(20px,4vw,64px);align-items:center;padding-block:clamp(28px,4.5vw,64px)}
-    .piece-panel{grid-column:1 / span 7;grid-row:1}
-    .piece-text{grid-column:8 / span 5;grid-row:1}
-    .piece-flip .piece-panel{grid-column:6 / span 7}
-    .piece-flip .piece-text{grid-column:1 / span 5}
-    .piece-text h3{font:800 clamp(1.8rem,3vw,2.6rem)/1 var(--display);letter-spacing:-.03em}
-    .piece-text p{margin-top:14px;color:var(--muted);max-width:26em}
-    .piece-links{display:flex;gap:24px;flex-wrap:wrap;margin-top:22px}
-
-    .panel{container-type:inline-size;position:relative;overflow:hidden;aspect-ratio:4/3;display:grid;place-items:center;border-radius:6px}
-    .panel-tiana{background:#f2b5d4;color:#3a1b3a}
-    .panel-tiana::before{content:"";position:absolute;width:62cqi;aspect-ratio:1;border-radius:50%;right:-8cqi;top:-14cqi;background:linear-gradient(135deg,#fff6ef,#eaa0cb 60%,#8b4d9c)}
-    .panel-tiana b{position:relative;font:800 13cqi/.92 var(--display);letter-spacing:-.04em;text-align:left;justify-self:start;margin-left:9cqi;align-self:end;margin-bottom:11cqi}
-    .panel-birthday{background:radial-gradient(circle at 30% 25%,#a8445c,#6e1530 55%,#2a0a16);color:#fbe2d8}
-    .panel-birthday::before{content:"";position:absolute;width:56cqi;aspect-ratio:1;border-radius:50%;border:1px solid #f0c3b6;box-shadow:0 0 0 4cqi rgba(240,195,182,.1),0 0 0 9cqi rgba(240,195,182,.06)}
-    .panel-birthday span{position:relative;text-align:center;display:block}
-    .panel-birthday i{display:block;font:italic 400 6cqi var(--text)}
-    .panel-birthday b{display:block;font:800 12cqi/1 var(--display);letter-spacing:-.04em;color:#f2c2b3}
-    .panel-wedding{background:#d9c8ad;color:#4a3b2e}
-    .panel-wedding::before{content:"";position:absolute;inset:8cqi 12cqi;border:1px solid #7a6a58}
-    .panel-wedding span{position:relative;text-align:center;display:block}
-    .panel-wedding i{display:block;font:400 3.4cqi var(--display);letter-spacing:.14em;text-transform:uppercase}
-    .panel-wedding b{display:block;font:italic 400 17cqi/1.05 var(--text)}
-    .panel-irave{background:radial-gradient(ellipse at 70% 35%,#7a2fe0,#2b0f5c 45%,#0d0820 85%);color:#fff}
-    .panel-irave b{font:800 20cqi/.8 var(--display);letter-spacing:-.06em;text-shadow:0 0 5cqi rgba(213,156,255,.6)}
-    .panel-irave b em{font:700 6cqi var(--display);font-style:normal;color:#8cf3fa;letter-spacing:0;vertical-align:top;margin-left:1cqi}
-    .panel-irave small{position:absolute;bottom:8cqi;left:0;right:0;text-align:center;font:500 3.2cqi var(--display);letter-spacing:.2em;color:#e3cfff}
-    .panel-rave{background:linear-gradient(145deg,#06303d,#0e1020 75%);color:#fff}
-    .panel-rave .bars{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-evenly;opacity:.35}
-    .panel-rave .bars i{width:.8cqi;height:var(--h,50%);background:#5de7e8;box-shadow:0 0 4cqi #5de7e8}
-    .panel-rave .bars i:nth-child(3n){--h:82%}
-    .panel-rave .bars i:nth-child(2n){--h:34%}
-    .panel-rave b{position:relative;font:800 12cqi/.9 var(--display);letter-spacing:-.04em}
-    .panel-proposal{background:#3b2a7a;color:#fff}
-    .panel-proposal::before{content:"";position:absolute;width:34cqi;aspect-ratio:1;right:10cqi;top:8cqi;background:#8e72e5;opacity:.55;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
-    .panel-proposal b{position:relative;font:700 10.5cqi/.95 var(--display);letter-spacing:-.04em;justify-self:start;margin-left:9cqi;align-self:end;margin-bottom:11cqi;max-width:9em}
+    .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .work-card{overflow:hidden}
+    .work-art{position:relative;height:230px;overflow:hidden;display:grid;place-items:center;border-radius:var(--radius) var(--radius) 0 0}
+    .work-art .bgfx{position:absolute;inset:0;transition:transform .8s var(--ease)}
+    .work-card:hover .bgfx{transform:scale(1.12)}
+    .art-1 .bgfx{background:radial-gradient(circle at 25% 20%,#2F6BEA,transparent 55%),linear-gradient(135deg,#102244,#0A1426)}
+    .art-2 .bgfx{background:radial-gradient(circle at 75% 25%,#9B6BFF,transparent 55%),linear-gradient(135deg,#1E1638,#0B0F22)}
+    .art-3 .bgfx{background:radial-gradient(circle at 30% 80%,#12B8C9,transparent 55%),linear-gradient(135deg,#0E2A3A,#091522)}
+    .art-window{position:relative;width:62%;padding:14px;border-radius:14px;background:rgba(8,13,26,.72);border:1px solid rgba(255,255,255,.14);box-shadow:0 24px 50px rgba(0,0,0,.4);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:transform .6s var(--ease)}
+    .work-card:hover .art-window{transform:translateY(-8px) scale(1.04)}
+    .art-bar{height:6px;width:36%;border-radius:6px;background:rgba(255,255,255,.35);margin-bottom:12px}
+    .art-window .screen-line{margin:8px 0}
+    .art-blocks{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+    .art-blocks span{height:44px;border-radius:8px;background:rgba(255,255,255,.1)}
+    .badge{position:absolute;top:16px;left:16px;z-index:2;padding:5px 11px;border-radius:999px;background:rgba(8,13,26,.75);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+    .work-info{padding:24px 26px 28px}
+    .work-info h3{font-size:22px;letter-spacing:-.02em;margin-bottom:8px}
+    .work-info p{color:var(--muted);font-size:14.5px;margin-bottom:16px}
+    .tag{display:inline-block;padding:5px 12px;border-radius:999px;font-size:11.5px;color:#9DE7FF;background:rgba(105,216,255,.07);border:1px solid rgba(105,216,255,.2)}
+    .work-note{margin-top:28px;color:#8292AD;font-size:13px}
 
     /* process */
-    .process h2{max-width:11em}
-    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,44px);margin-top:clamp(36px,5vw,64px);counter-reset:step}
-    .steps li{counter-increment:step;border-top:3px solid var(--sun);padding-top:20px}
-    .steps li::before{content:counter(step);display:block;font:800 3.4rem/1 var(--display);letter-spacing:-.05em;color:var(--sun);margin-bottom:14px}
-    .steps h3{font:700 1.35rem/1.15 var(--display);letter-spacing:-.02em;margin-bottom:8px}
-    .steps p{color:rgba(255,255,255,.82);font-size:1.05rem}
+    .process-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .process-grid::before{content:"";position:absolute;left:0;right:0;top:34px;height:1px;background:linear-gradient(90deg,var(--blue),var(--cyan),transparent);transform-origin:0 50%;transform:scaleX(0);transition:transform 1.4s var(--ease)}
+    .process-grid.visible::before,html:not(.js) .process-grid::before{transform:scaleX(1)}
+    .step{padding:64px 26px 28px}
+    .step::after{content:"";position:absolute;top:28px;left:26px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:2px solid var(--cyan);box-shadow:0 0 14px rgba(105,216,255,.7)}
+    .step-num{color:var(--cyan);font-size:11.5px;letter-spacing:.16em;margin-bottom:14px;font-weight:500}
+    .step h3{font-size:24px;letter-spacing:-.02em;margin-bottom:10px}
+    .step p{color:var(--muted);font-size:14.5px}
 
     /* about */
-    .about-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,6vw,96px)}
-    .about-copy p+p{margin-top:1.1em}
-    .build-list{margin-top:30px;display:grid;gap:10px;font:500 1.1rem var(--display)}
-    .build-list li{padding-left:22px;position:relative}
-    .build-list li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border-radius:50%;background:var(--cobalt)}
+    .about-panel{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;padding:56px;align-items:center;overflow:hidden}
+    .about-panel>div:first-child p{color:var(--muted);margin-top:20px;font-size:16.5px}
+    .principles{display:grid;gap:14px}
+    .principle{display:flex;gap:16px;padding:18px 20px;border-radius:16px;background:rgba(255,255,255,.025);border:1px solid var(--line);transition:border-color .3s,transform .3s var(--ease)}
+    .principle:hover{border-color:rgba(105,216,255,.4);transform:translateX(6px)}
+    .check{flex:none;width:34px;height:34px;border-radius:11px;display:grid;place-items:center;color:var(--cyan);background:rgba(105,216,255,.09);border:1px solid rgba(105,216,255,.22)}
+    .principle strong{display:block;font-size:15.5px}
+    .principle span.d{color:var(--muted);font-size:13.5px}
 
-    /* contact */
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:start}
-    .contact h2{font-size:clamp(2.6rem,6vw,5rem)}
-    .contact .lede{margin-top:22px;color:rgba(255,255,255,.92)}
-    .contact-actions{margin-top:30px}
-    .reach{margin-top:34px;display:grid;gap:10px;font:500 1.1rem var(--display)}
-    .reach a{text-underline-offset:5px}
-    .reach dt{font-weight:700;display:inline}
-    .paper-sheet{background:var(--paper);color:var(--ink);padding:clamp(24px,4vw,40px);border-radius:6px}
-    .paper-sheet h3{font:800 1.7rem/1.1 var(--display);letter-spacing:-.03em}
-    .paper-sheet .hint{color:var(--muted);font-size:1rem;margin:8px 0 22px}
-    .form-grid{display:grid;gap:16px}
-    .form-grid label{font:700 .95rem var(--display);display:grid;gap:6px}
-    .form-grid input,.form-grid select,.form-grid textarea{width:100%;padding:12px 14px;border-radius:8px;border:2px solid #c9cbe0;background:var(--white);color:var(--ink);font:400 1.05rem var(--text)}
-    .form-grid textarea{min-height:120px;resize:vertical}
-    .form-grid input:focus,.form-grid select:focus,.form-grid textarea:focus{border-color:var(--cobalt)}
-    .form-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
-    .form-error{margin-top:14px;color:#b00028;font:700 .95rem var(--display)}
+    /* cta + contact */
+    .cta{position:relative;text-align:center;padding:76px 32px;overflow:hidden;isolation:isolate}
+    .cta::after{content:"";position:absolute;inset:-40% 10% auto;height:340px;z-index:-1;background:radial-gradient(closest-side,rgba(76,141,255,.35),transparent);}
+    .cta h2{max-width:720px;margin:0 auto}
+    .cta p{max-width:560px;margin:20px auto 32px;color:var(--muted);font-size:17px}
+    .contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:820px}
+    .contact-card{display:flex;align-items:center;gap:20px;padding:26px 28px}
+    .contact-card:hover{transform:translateY(-6px)}
+    .contact-icon{flex:none;width:54px;height:54px;border-radius:16px;display:grid;place-items:center;color:var(--cyan);background:linear-gradient(135deg,rgba(76,141,255,.22),rgba(105,216,255,.08));border:1px solid rgba(105,216,255,.25)}
+    .contact-icon svg{width:24px;height:24px}
+    .contact-card small{display:block;color:var(--muted);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+    .contact-card strong{font:700 clamp(16px,2vw,20px) var(--head);word-break:break-word}
 
-    .site-footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:28px;font:500 .95rem var(--display);color:rgba(255,255,255,.85)}
-    .wa-float{position:fixed;right:18px;bottom:18px;z-index:40;display:inline-flex;align-items:center;gap:9px;padding:12px 18px;border-radius:999px;background:#0f7a40;color:#fff;font:700 .95rem var(--display);text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.28)}
-    .wa-float svg{fill:#fff}
+    footer{border-top:1px solid var(--line);padding:36px 0;color:#8292AD;font-size:13px}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-inner .brand img{height:30px}
+    .footer-links{display:flex;gap:22px}
+    .footer-links a:hover{color:var(--cyan)}
+    .wa-float{position:fixed;right:22px;bottom:22px;z-index:55;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#25D366,#12a150);color:#04210F;box-shadow:0 14px 34px rgba(37,211,102,.35);transition:transform .3s var(--ease)}
+    .wa-float:hover{transform:translateY(-4px) scale(1.06)}
+    .wa-float svg{width:28px;height:28px}
 
-    @media (max-width:900px){
-      .hero-grid,.about-grid,.contact-grid,.work-head{grid-template-columns:1fr}
-      .stage{margin-top:12px}
-      .piece{grid-template-columns:1fr;row-gap:20px}
-      .piece-panel,.piece-text,.piece-flip .piece-panel,.piece-flip .piece-text{grid-column:1;grid-row:auto}
-      .steps{grid-template-columns:1fr 1fr}
+
+    /* real work cards */
+    .work-art{container-type:inline-size}
+    .poster{position:relative;z-index:1;text-align:center;transition:transform .7s var(--ease)}
+    .work-card:hover .poster{transform:scale(1.06)}
+    .poster i{display:block;font:italic 400 5.5cqi/1.2 Georgia,serif}
+    .poster b{display:block;font:700 12cqi/1 var(--head);letter-spacing:-.04em}
+    .art-birthday .bgfx{background:radial-gradient(circle at 30% 25%,#a8445c,#6e1530 55%,#2a0a16)}
+    .art-birthday .poster{color:#fbe2d8}
+    .art-birthday .poster::before{content:"";position:absolute;left:50%;top:50%;width:62cqi;aspect-ratio:1;translate:-50% -50%;border-radius:50%;border:1px solid #f0c3b6;box-shadow:0 0 0 4cqi rgba(240,195,182,.1),0 0 0 9cqi rgba(240,195,182,.06);z-index:-1}
+    .art-birthday .poster b{color:#f2c2b3}
+    .art-tiana .bgfx{background:radial-gradient(circle at 82% 12%,#fff6ef 0,#eaa0cb 20%,#8b4d9c 32%,transparent 33%),#f2b5d4}
+    .art-tiana .poster{color:#3a1b3a;text-align:left;align-self:end;justify-self:start;margin:0 0 9cqi 9cqi}
+    .art-tiana .poster b{font-size:11cqi;line-height:.95}
+    .art-rave .bgfx{background:radial-gradient(ellipse at 70% 35%,#7a2fe0,#2b0f5c 45%,#0d0820 85%)}
+    .art-rave .poster{color:#fff}
+    .art-rave .poster b{font-size:20cqi;line-height:.85;letter-spacing:-.06em;text-shadow:0 0 5cqi rgba(213,156,255,.6)}
+    .art-rave .poster em{font:700 6cqi var(--head);font-style:normal;color:#8cf3fa;letter-spacing:0;vertical-align:top;margin-left:1cqi}
+    .art-rave .poster small{display:block;margin-top:2cqi;font:500 3.2cqi var(--body);letter-spacing:.2em;color:#e3cfff}
+    .work-links{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+    .link{font-weight:700;font-size:14px;color:var(--cyan);transition:color .2s}
+    .link:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+    .soon{font-size:12px;color:#8292AD}
+    .work-note .link{font-size:13px}
+
+    /* contact + form */
+    .contact-layout{display:grid;grid-template-columns:1fr 1.05fr;gap:24px;align-items:start}
+    .contact-side .contact-grid{grid-template-columns:1fr;max-width:none}
+    .social{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:22px;color:var(--muted);font-size:14px}
+    .social a{padding:7px 14px;border-radius:999px;border:1px solid var(--line);color:var(--text);font-size:13px;font-weight:500;transition:border-color .25s,background .25s}
+    .social a:hover{border-color:var(--cyan);background:rgba(105,216,255,.08)}
+    .form{padding:32px 30px}
+    .form h3{font-size:24px;letter-spacing:-.02em;margin-bottom:22px}
+    .field{display:grid;gap:7px;margin-bottom:18px}
+    .field label{font-size:13px;font-weight:500;color:#C5D0E3}
+    .field input,.field select,.field textarea{width:100%;padding:13px 15px;border-radius:12px;border:1px solid rgba(174,197,235,.22);background:rgba(8,13,26,.6);color:var(--text);font:400 15px var(--body);transition:border-color .2s,box-shadow .2s}
+    .field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#9BAAC3 50%),linear-gradient(135deg,#9BAAC3 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 15px) 50%;background-size:5px 5px;background-repeat:no-repeat;padding-right:38px}
+    .field textarea{min-height:120px;resize:vertical}
+    .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(105,216,255,.18)}
+    .field ::placeholder{color:#6F7E99}
+    .form-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+    .form-error{margin-top:14px;color:#FF9AA8;font-size:14px;font-weight:500}
+    .footer-links{flex-wrap:wrap}
+    @media (max-width:900px){.contact-layout{grid-template-columns:1fr}}
+    @media (max-width:620px){.form{padding:24px 20px}.form-actions .btn{flex:1 1 100%}}
+
+    /* motion */
+    .js .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+    .js .reveal.visible{opacity:1;transform:none}
+    .js .reveal.settled{transition:transform .4s var(--ease),box-shadow .45s var(--ease),opacity .3s;transition-delay:0s}
+    .js .rise{opacity:0;transform:translateY(26px);animation:rise .9s var(--ease) forwards;animation-delay:var(--d,0s)}
+    .js h1 .w{opacity:0;transform:translateY(.6em);animation:rise .9s var(--ease) forwards;animation-delay:calc(.18s + var(--i)*.07s)}
+    @keyframes rise{to{opacity:1;transform:none}}
+    @keyframes float{0%,100%{translate:0 0}50%{translate:0 -14px}}
+    @keyframes floatR{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -18px;rotate:12deg}}
+    @keyframes breathe{0%,100%{scale:1}50%{scale:1.05}}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes pulse{50%{opacity:.45;transform:scale(.8)}}
+    @keyframes sheen{0%,60%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+    /* responsive */
+    @media (max-width:1060px){
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .process-grid{grid-template-columns:repeat(2,1fr)}
+      .process-grid::before{display:none}
+      .about-panel{grid-template-columns:1fr;padding:40px 30px}
     }
-    @media (max-width:680px){
-      .menu-btn{display:inline-block}
-      .nav{display:none;position:absolute;left:24px;right:24px;top:70px;z-index:30;flex-direction:column;align-items:stretch;gap:16px;padding:22px;background:var(--ink);border-radius:10px}
-      .nav.open{display:flex}
-      .site-header{position:relative}
-      .steps{grid-template-columns:1fr}
-      .form-actions .btn{width:100%;justify-content:center}
+    @media (max-width:900px){
+      .hero{padding:64px 0 72px}
+      .hero-grid{grid-template-columns:1fr;gap:20px}
+      .visual{min-height:440px}
+      .work-grid{grid-template-columns:1fr}
+      .work-art{height:210px}
+      .stats-grid{grid-template-columns:1fr;gap:18px}
+      section{padding:84px 0}
+    }
+    @media (max-width:820px){
+      .menu-btn{display:block}
+      .nav-cta{display:none}
+      .nav-links{position:absolute;left:0;right:0;top:78px;flex-direction:column;align-items:stretch;gap:0;padding:12px 22px 22px;background:#080D1A;border-bottom:1px solid var(--line);transform:translateY(-12px);opacity:0;visibility:hidden;transition:opacity .3s,transform .3s var(--ease),visibility .3s}
+      .nav-links.open{opacity:1;transform:none;visibility:visible}
+      .nav-links a{padding:15px 4px;border-bottom:1px solid var(--line);font-size:16px}
+      .nav-ind{display:none}
+    }
+    @media (max-width:620px){
+      .services-grid,.process-grid,.contact-grid{grid-template-columns:1fr}
+      .orbit.o3{width:340px;height:340px}.orbit.o1{width:320px}.orbit.o2{width:340px;height:220px}
+      .orb{width:270px;height:270px}
+      .visual{min-height:400px}
+      .chip.c1{right:0}
+      .about-panel{padding:30px 20px}
+      .cta{padding:56px 22px}
+      .footer-inner{flex-direction:column;align-items:flex-start}
+      .hero-actions .btn{flex:1 1 100%}
     }
     @media (prefers-reduced-motion:reduce){
-      html{scroll-behavior:auto}
-      .phone{animation:none}
-      *{transition-duration:.01ms!important}
+      *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+      .js .reveal,.js .rise,.js h1 .w{opacity:1!important;transform:none!important}
+      .process-grid::before{transform:scaleX(1)}
     }
   </style>
 </head>
 <body>
-  <a class="skip" href="#work">Skip to the work</a>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
-  <section class="hero on-cobalt" id="top">
-    <div class="wrap">
-      <header class="site-header">
-        <a class="wordmark" href="#top" aria-label="Aether Timi, home">Aether Timi</a>
-        <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
-        <nav class="nav" id="nav" aria-label="Main">
-          <a href="#work">Work</a>
-          <a href="#process">How it works</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-          <a class="btn btn-sun" href="https://wa.me/2348139342375?text=Hi%20Timi%2C%20I%27d%20like%20to%20talk%20about%20a%20website." target="_blank" rel="noreferrer">WhatsApp me</a>
-        </nav>
-      </header>
+  <header class="nav-wrap">
+    <nav class="container" aria-label="Primary">
+      <a class="brand" href="#home" aria-label="Aether Timi — home"><img src="assets/logo-horizontal-dark.svg" width="157" height="36" alt="Aether Timi"></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a><a href="#services">Services</a><a href="#work">Our Work</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a>
+        <span class="nav-ind" id="navInd" aria-hidden="true"></span>
+      </div>
+      <a class="btn btn-primary nav-cta" href="#contact">Let's Talk <span class="arr" aria-hidden="true">↗</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
 
-      <div class="hero-grid">
+  <main id="main">
+    <section class="hero" id="home" style="padding-bottom:96px">
+      <div class="glow g1" data-speed="0.12" aria-hidden="true"></div>
+      <div class="glow g2" data-speed="-0.08" aria-hidden="true"></div>
+      <div class="container hero-grid">
         <div>
-          <h1 class="display">Websites for the days worth celebrating.</h1>
-          <p class="lede">I'm Timi, a web developer in Nigeria. I build birthday, wedding, proposal and event websites that your guests can open on their phones with one link.</p>
-          <div class="hero-actions">
-            <a class="btn btn-sun" href="https://wa.me/2348139342375?text=Hi%20Timi%2C%20I%27d%20like%20to%20start%20a%20project." target="_blank" rel="noreferrer">Chat on WhatsApp</a>
-            <a class="textlink" href="#work">See the work</a>
+          <div class="eyebrow rise" style="--d:0s"><span class="pulse"></span> Creative thinking. Intelligent execution.</div>
+          <h1 aria-label="We build digital experiences that move brands forward.">
+            <span class="w" style="--i:0" aria-hidden="true">We</span> <span class="w" style="--i:1" aria-hidden="true">build</span> <span class="w" style="--i:2" aria-hidden="true">digital</span> <span class="w" style="--i:3" aria-hidden="true">experiences</span>
+            <span class="gradient"><span class="w" style="--i:4" aria-hidden="true">that</span> <span class="w" style="--i:5" aria-hidden="true">move</span> <span class="w" style="--i:6" aria-hidden="true">brands</span> <span class="w" style="--i:7" aria-hidden="true">forward.</span></span>
+          </h1>
+          <p class="hero-copy rise" style="--d:.75s">We transform ambitious ideas into extraordinary digital experiences — from celebration and event websites to landing pages and distinctive brand identities.</p>
+          <div class="hero-actions rise" style="--d:.9s">
+            <a class="btn btn-primary" href="#contact">Start a project <span class="arr" aria-hidden="true">↗</span></a>
+            <a class="btn btn-outline btn-down" href="#work">Explore our work <span class="arr" aria-hidden="true">↓</span></a>
           </div>
+          <div class="micro-trust rise" style="--d:1.05s"><span class="micro-line"></span> Strategy · Design · Development · Based in Nigeria, working worldwide</div>
         </div>
-
-        <div class="stage">
-          <div class="phone" id="phone" data-theme="birthday" data-long="false">
-            <div class="phone-body" id="phone-body" title="Tap for confetti">
-              <div>
-                <p class="phone-kicker" id="kicker">Happy birthday,</p>
-                <p class="phone-name" id="pname">Amara</p>
+        <div class="visual rise" style="--d:.5s" role="img" aria-label="Abstract illustration of a digital interface orbiting a glowing sphere">
+          <div class="orb"></div>
+          <div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"><i></i></div>
+          <div class="core-card" id="coreCard">
+            <div class="tilt-inner">
+              <div class="card-top"><span>Digital experience / 001</span><span class="dots"><i></i><i></i><i></i></span></div>
+              <div class="mini-screen">
+                <div class="screen-line big"></div><div class="screen-line"></div><div class="screen-line short"></div>
+                <div class="screen-grid"><span></span><span></span><span></span></div>
               </div>
-              <div class="phone-tabs" aria-hidden="true"><span>Story</span><span>Photos</span><span>RSVP</span></div>
+              <div class="card-bottom"><span>Designed for impact</span><span class="status">● LIVE CONCEPT</span></div>
             </div>
           </div>
-          <div class="controls">
-            <div>
-              <label class="field-label" for="name-input">Whose day is it?</label>
-              <input type="text" id="name-input" value="Amara" maxlength="18" autocomplete="off" />
-            </div>
-            <fieldset class="chips">
-              <legend>What are you celebrating?</legend>
-              <label class="chip"><input type="radio" name="occasion" value="birthday" checked /><span>Birthday</span></label>
-              <label class="chip"><input type="radio" name="occasion" value="wedding" /><span>Wedding</span></label>
-              <label class="chip"><input type="radio" name="occasion" value="proposal" /><span>Proposal</span></label>
-              <label class="chip"><input type="radio" name="occasion" value="party" /><span>Party</span></label>
-            </fieldset>
-            <a class="btn btn-sun" id="demo-cta" href="https://wa.me/2348139342375" target="_blank" rel="noreferrer">I want a site like this</a>
+          <span class="chip c1">AI-assisted</span><span class="chip c2">Human-guided</span><span class="shard"></span>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div class="container stats-grid">
+        <div class="stat reveal"><strong>Design-led</strong><span>Every detail has a purpose</span></div>
+        <div class="stat reveal" style="--d:.1s"><strong>AI-assisted</strong><span>Smarter, more efficient workflows</span></div>
+        <div class="stat reveal" style="--d:.2s"><strong>Human-guided</strong><span>Thoughtful creative direction</span></div>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker">What we do</div><h2>Digital solutions built around <span class="gradient">your next move.</span></h2><p>Whether you're starting from zero or ready to elevate an existing brand, we bring the strategy, design and development together.</p></div>
+        <div class="services-grid">
+          <article class="card service tilt reveal">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2.5"/><path d="M3 9h18M8 21h8M12 18v3"/></svg></div>
+            <h3>Website Design &amp; Development</h3><p>Responsive, engaging websites that communicate your value and make it easy for customers to take action.</p>
+            <ul><li>Business and corporate websites</li><li>Landing pages and portfolios</li><li>E-commerce and website redesigns</li></ul>
+          </article>
+          <article class="card service tilt reveal" style="--d:.08s">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8L19 16z"/></svg></div>
+            <h3>Interactive Digital Experiences</h3><p>Memorable, personalized websites that turn special moments, campaigns and events into experiences.</p>
+            <ul><li>Birthday, wedding and proposal websites</li><li>Event and celebration landing pages</li><li>Custom animations and interactions</li></ul>
+          </article>
+          <article class="card service tilt reveal" style="--d:.16s">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5M3 17.5l9 5 9-5" opacity=".6"/></svg></div>
+            <h3>Branding &amp; Creative Design</h3><p>Consistent visual systems and creative assets that help your business look confident and recognizable.</p>
+            <ul><li>Visual identity concepts</li><li>Promotional graphics</li><li>Social media design assets</li></ul>
+          </article>
+          <article class="card service tilt reveal" style="--d:.24s">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+            <h3>Digital Products</h3><p>Practical, ready-to-customize digital resources designed to help creators and businesses move faster.</p>
+            <ul><li>Website templates</li><li>Digital business resources</li><li>Customizable creative assets</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker">Selected work</div><h2>Good ideas deserve <span class="gradient">great execution.</span></h2><p>A selection of celebration and event websites built by Aether Timi. The code for each is public on GitHub, and live demos will be linked here as soon as they are deployed.</p></div>
+        <div class="work-grid">
+          <article class="card work-card reveal">
+            <div class="work-art art-birthday"><span class="badge">Birthday website</span><div class="bgfx"></div><div class="poster"><i>happy</i><b>birthday</b></div></div>
+            <div class="work-info"><h3>Burgundy &amp; Rose-Gold Birthday</h3><p>A responsive birthday website in burgundy and rose-gold, built to feel personal.</p><span class="tag">HTML · CSS · JavaScript</span>
+              <div class="work-links"><a class="link" href="https://github.com/aethertimi-ctrl/birthday-website" target="_blank" rel="noopener">View code <span aria-hidden="true">↗</span></a><span class="soon">Live demo coming soon</span></div></div>
+          </article>
+          <article class="card work-card reveal" style="--d:.1s">
+            <div class="work-art art-tiana"><span class="badge">Birthday website</span><div class="bgfx"></div><div class="poster"><b>A day<br>to celebrate</b></div></div>
+            <div class="work-info"><h3>Tiana Birthday Site</h3><p>A personalised birthday website with a warm, soft look and thoughtful details.</p><span class="tag">TypeScript · Vite · Tailwind</span>
+              <div class="work-links"><a class="link" href="https://github.com/aethertimi-ctrl/Tiana-birthday" target="_blank" rel="noopener">View code <span aria-hidden="true">↗</span></a><span class="soon">Live demo coming soon</span></div></div>
+          </article>
+          <article class="card work-card reveal" style="--d:.2s">
+            <div class="work-art art-rave"><span class="badge">Event website</span><div class="bgfx"></div><div class="poster"><b>iRAVE<em>2.0</em></b><small>THE OBLEE EDITION</small></div></div>
+            <div class="work-info"><h3>iRave, the Oblee Edition</h3><p>An event landing page that sets the mood before the first track drops.</p><span class="tag">TypeScript · Vite · Tailwind</span>
+              <div class="work-links"><a class="link" href="https://github.com/aethertimi-ctrl/rave-template" target="_blank" rel="noopener">View code <span aria-hidden="true">↗</span></a><span class="soon">Live demo coming soon</span></div></div>
+          </article>
+        </div>
+        <p class="work-note reveal">More on GitHub: a <a class="link" href="https://github.com/aethertimi-ctrl/wedding-template" target="_blank" rel="noopener">wedding template</a> and an <a class="link" href="https://github.com/aethertimi-ctrl/a-proposal-for-prince-" target="_blank" rel="noopener">interactive proposal page</a>. &nbsp;<a class="link" href="https://github.com/aethertimi-ctrl" target="_blank" rel="noopener">See all projects on GitHub <span aria-hidden="true">↗</span></a></p>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker">How we work</div><h2>A thoughtful process. <span class="gradient">A better outcome.</span></h2><p>Clear communication and structured delivery keep every project moving in the right direction.</p></div>
+        <div class="process-grid reveal">
+          <div class="card step"><div class="step-num">01 / DISCOVER</div><h3>Understand</h3><p>We learn about your goals, audience, requirements and what success should look like.</p></div>
+          <div class="card step"><div class="step-num">02 / CREATE</div><h3>Design</h3><p>We shape the visual direction and experience around your brand and objectives.</p></div>
+          <div class="card step"><div class="step-num">03 / BUILD</div><h3>Develop</h3><p>We build, refine and test the experience across mobile, tablet and desktop.</p></div>
+          <div class="card step"><div class="step-num">04 / DELIVER</div><h3>Launch</h3><p>After your review and approval, we prepare your project for launch and handover.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="card about-panel reveal">
+          <div><div class="kicker">The Aether Timi approach</div><h2>Technology with a <span class="gradient">human perspective.</span></h2>
+            <p>Aether Timi is an independent digital agency built around a simple belief: technology should make good ideas more powerful. We combine creative direction, modern development tools and AI-assisted workflows while keeping human judgement at the centre of every decision.</p><p>I'm Timi, the developer behind Aether Timi. I'm based in Nigeria, work with clients anywhere, and build in HTML, CSS, JavaScript and TypeScript, publishing on Vercel and GitHub Pages so your site stays online and loads fast on a phone.</p></div>
+          <div class="principles">
+            <div class="principle"><span class="check" aria-hidden="true">✦</span><div><strong>Purpose before decoration</strong><span class="d">Design choices support a clear goal.</span></div></div>
+            <div class="principle"><span class="check" aria-hidden="true">✦</span><div><strong>Built for real devices</strong><span class="d">Responsive experiences across screen sizes.</span></div></div>
+            <div class="principle"><span class="check" aria-hidden="true">✦</span><div><strong>AI-assisted, human-reviewed</strong><span class="d">Efficiency without losing thoughtful oversight.</span></div></div>
+            <div class="principle"><span class="check" aria-hidden="true">✦</span><div><strong>Clear collaboration</strong><span class="d">Defined scope, feedback and delivery steps.</span></div></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="band on-paper" id="work">
-    <div class="wrap">
-      <div class="work-head">
-        <h2 class="display">Recent work</h2>
-        <p>Six projects. The ones with a live link are running right now.</p>
+    <section style="padding-top:0">
+      <div class="container">
+        <div class="card cta reveal"><div class="kicker">Have an idea?</div><h2>Let's create something <span class="gradient">worth remembering.</span></h2>
+          <p>Tell us what you have in mind. We'll discuss your goals and the right digital solution for your next step.</p>
+          <a class="btn btn-primary" href="https://wa.me/2348139342375?text=Hello%20Aether%20Timi%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Chat on WhatsApp <span class="arr" aria-hidden="true">↗</span></a></div>
       </div>
+    </section>
 
-      <article class="piece">
-        <div class="panel panel-tiana piece-panel" role="img" aria-label="Pink poster with a large orb that reads A day to celebrate"><b>A day<br>to celebrate</b></div>
-        <div class="piece-text">
-          <h3>Tiana birthday site</h3>
-          <p>A personalised birthday website with a warm, soft look and thoughtful details.</p>
-          <div class="piece-links"><a class="textlink" href="https://tiana-template.vercel.app/" target="_blank" rel="noreferrer">Open the live site</a><a class="textlink" href="https://github.com/aethertimi-ctrl/Tiana-birthday" target="_blank" rel="noreferrer">View code</a></div>
+    <section id="contact" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker">Get in touch</div><h2>Your next project starts <span class="gradient">with a conversation.</span></h2><p>The quickest way to reach us is WhatsApp. Prefer to write it down first? Use the form and it will open a message with your details ready to send.</p></div>
+        <div class="contact-layout">
+          <div class="contact-side">
+            <div class="contact-grid">
+              <a class="card contact-card reveal" href="https://wa.me/2348139342375?text=Hello%20Aether%20Timi%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 20.5l1.7-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg></span>
+                <span><small>WhatsApp</small><strong>+234 813 934 2375</strong></span></a>
+              <a class="card contact-card reveal" style="--d:.1s" href="mailto:Aethertimi@gmail.com?subject=Project%20Enquiry%20-%20Aether%20Timi">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></span>
+                <span><small>Email</small><strong>Aethertimi@gmail.com</strong></span></a>
+            </div>
+            <p class="social reveal"><span>Find us on</span><a href="https://github.com/aethertimi-ctrl" target="_blank" rel="noopener">GitHub</a><a href="https://x.com/AetherTimi" target="_blank" rel="noopener">X</a><a href="https://www.linkedin.com/in/aether-timi" target="_blank" rel="noopener">LinkedIn</a></p>
+          </div>
+          <form class="card form reveal" id="project-form" novalidate>
+            <h3>Start with a few details</h3>
+            <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="f-service">What do you need?</label>
+              <select id="f-service" name="service"><option>Birthday website</option><option>Wedding website</option><option>Proposal page</option><option>Event or landing page</option><option>Business website</option><option>Branding &amp; design</option><option>Something else</option></select></div>
+            <div class="field"><label for="f-msg">About your project</label><textarea id="f-msg" name="message" required placeholder="What is the occasion or goal, when do you need it, and what look do you have in mind?"></textarea></div>
+            <div class="form-actions"><button class="btn btn-primary" type="submit">Send on WhatsApp <span class="arr" aria-hidden="true">↗</span></button><button class="btn btn-outline" type="button" id="send-email">Send by email</button></div>
+            <p class="form-error" role="alert" hidden>Please add your name and a short note before sending.</p>
+          </form>
         </div>
-      </article>
-
-      <article class="piece piece-flip">
-        <div class="panel panel-birthday piece-panel" role="img" aria-label="Burgundy poster with a rose-gold ring that reads happy birthday"><span><i>happy</i><b>birthday</b></span></div>
-        <div class="piece-text">
-          <h3>Burgundy and rose-gold birthday site</h3>
-          <p>A responsive birthday website in burgundy and rose-gold, built to feel personal.</p>
-          <div class="piece-links"><a class="textlink" href="https://aethertimi-ctrl.github.io/birthday-website/" target="_blank" rel="noreferrer">Open the live site</a><a class="textlink" href="https://github.com/aethertimi-ctrl/birthday-website" target="_blank" rel="noreferrer">View code</a></div>
-        </div>
-      </article>
-
-      <article class="piece">
-        <div class="panel panel-wedding piece-panel" role="img" aria-label="Tan invitation card with a thin frame that reads forever"><span><i>The beginning of</i><b>forever</b><i>An invitation to celebrate</i></span></div>
-        <div class="piece-text">
-          <h3>Wedding site template</h3>
-          <p>An invitation-style wedding website that couples can make their own.</p>
-          <div class="piece-links"><a class="textlink" href="https://github.com/aethertimi-ctrl/wedding-template" target="_blank" rel="noreferrer">View code</a></div>
-        </div>
-      </article>
-
-      <article class="piece piece-flip">
-        <div class="panel panel-irave piece-panel" role="img" aria-label="Dark purple event poster that reads iRave 2.0, the Oblee Edition"><b>iRAVE<em>2.0</em></b><small>THE OBLEE EDITION</small></div>
-        <div class="piece-text">
-          <h3>iRave, the Oblee Edition</h3>
-          <p>An event landing page that sets the mood before the first track drops.</p>
-          <div class="piece-links"><a class="textlink" href="https://github.com/aethertimi-ctrl/rave-template" target="_blank" rel="noreferrer">View code</a></div>
-        </div>
-      </article>
-
-      <article class="piece">
-        <div class="panel panel-rave piece-panel" role="img" aria-label="Teal poster with sound bars that reads feel the frequency"><div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><b>FEEL<br>THE<br>FREQUENCY.</b></div>
-        <div class="piece-text">
-          <h3>Rave event website</h3>
-          <p>A bold website for a music event, made for sharing with the crowd.</p>
-          <div class="piece-links"><a class="textlink" href="https://aethertimi-ctrl.github.io/rave-website/" target="_blank" rel="noreferrer">Open the live site</a><a class="textlink" href="https://github.com/aethertimi-ctrl/rave-website" target="_blank" rel="noreferrer">View code</a></div>
-        </div>
-      </article>
-
-      <article class="piece piece-flip">
-        <div class="panel panel-proposal piece-panel" role="img" aria-label="Purple poster with a star that reads a little something personal"><b>a little something personal.</b></div>
-        <div class="piece-text">
-          <h3>Personal proposal page</h3>
-          <p>An interactive proposal, made as a surprise for one person.</p>
-          <div class="piece-links"><a class="textlink" href="https://github.com/aethertimi-ctrl/a-proposal-for-prince-" target="_blank" rel="noreferrer">View code</a></div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="band on-ink process" id="process">
-    <div class="wrap">
-      <h2 class="display">How a project works</h2>
-      <ol class="steps">
-        <li><h3>Tell me about the day</h3><p>Message me on WhatsApp with the occasion, the date and the mood you want.</p></li>
-        <li><h3>I design a first version</h3><p>You get a draft to open and look at on your phone.</p></li>
-        <li><h3>We adjust it together</h3><p>Change the words, photos, colors and layout until it feels right.</p></li>
-        <li><h3>It goes live</h3><p>Your site gets its own link to send to your guests.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="band on-paper" id="about">
-    <div class="wrap about-grid">
-      <h2 class="display">Hi, I'm Timi.</h2>
-      <div class="about-copy">
-        <p>I'm a web developer based in Nigeria, working with clients anywhere. I like building the sites people open once and send to everyone: birthdays, weddings, proposals and live events.</p>
-        <p>I write HTML, CSS, JavaScript and TypeScript, and publish on Vercel and GitHub Pages, so your site stays online and loads fast on a phone.</p>
-        <ul class="build-list">
-          <li>Birthday, wedding and proposal websites</li>
-          <li>Event pages and landing pages</li>
-          <li>Reusable templates you can adapt</li>
-          <li>Custom web ideas that need something different</li>
-        </ul>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <section class="band on-cobalt contact" id="contact">
-    <div class="wrap contact-grid">
-      <div>
-        <h2 class="display">Tell me about your day.</h2>
-        <p class="lede">The quickest way to reach me is WhatsApp. Prefer to write it all down first? Use the form and it will open a message with your details ready to send.</p>
-        <div class="contact-actions"><a class="btn btn-sun" href="https://wa.me/2348139342375?text=Hi%20Timi%2C%20I%27d%20like%20to%20start%20a%20project." target="_blank" rel="noreferrer">Chat on WhatsApp</a></div>
-        <dl class="reach">
-          <div><dt>WhatsApp: </dt><dd style="display:inline;margin:0"><a href="https://wa.me/2348139342375" target="_blank" rel="noreferrer">+234 813 934 2375</a></dd></div>
-          <div><dt>Email: </dt><dd style="display:inline;margin:0"><a href="mailto:aethertimi@gmail.com">aethertimi@gmail.com</a></dd></div>
-          <div><dt>Elsewhere: </dt><dd style="display:inline;margin:0"><a href="https://github.com/aethertimi-ctrl" target="_blank" rel="noreferrer">GitHub</a>, <a href="https://x.com/AetherTimi" target="_blank" rel="noreferrer">X</a> and <a href="https://www.linkedin.com/in/aether-timi" target="_blank" rel="noreferrer">LinkedIn</a></dd></div>
-        </dl>
-      </div>
-
-      <form class="paper-sheet" id="project-form" novalidate>
-        <h3>Start with a few details</h3>
-        <p class="hint">Add your name and a short note, then send it by WhatsApp or email.</p>
-        <div class="form-grid">
-          <label>Your name<input type="text" name="name" autocomplete="name" required /></label>
-          <label>What do you need?
-            <select name="service" id="service-select">
-              <option>Birthday website</option>
-              <option>Wedding website</option>
-              <option>Proposal page</option>
-              <option>Event or landing page</option>
-              <option>Something else</option>
-            </select>
-          </label>
-          <label>About the day<textarea name="message" required placeholder="What's the occasion, when is it, and what look do you have in mind?"></textarea></label>
-        </div>
-        <div class="form-actions">
-          <button class="btn btn-ink" type="submit">Send on WhatsApp</button>
-          <button class="btn btn-line" type="button" id="send-email">Send by email</button>
-        </div>
-        <p class="form-error" role="alert" hidden>Add your name and a short note before sending.</p>
-      </form>
+  <footer>
+    <div class="container footer-inner">
+      <a class="brand" href="#home" aria-label="Aether Timi — back to top"><img src="assets/logo-horizontal-dark.svg" width="131" height="30" alt="Aether Timi" loading="lazy"></a>
+      <span>© <span id="year">2026</span> Aether Timi. All rights reserved.</span>
+      <div class="footer-links"><a href="#services">Services</a><a href="#work">Work</a><a href="#contact">Contact</a><a href="https://github.com/aethertimi-ctrl" target="_blank" rel="noopener">GitHub</a><a href="https://x.com/AetherTimi" target="_blank" rel="noopener">X</a><a href="https://www.linkedin.com/in/aether-timi" target="_blank" rel="noopener">LinkedIn</a></div>
     </div>
-    <div class="wrap">
-      <footer class="site-footer"><span>© <span id="year">2026</span> Aether Timi</span><a href="#top">Back to top</a></footer>
-    </div>
-  </section>
+  </footer>
 
-  <a class="wa-float" href="https://wa.me/2348139342375?text=Hi%20Timi%2C%20I%20saw%20your%20portfolio." target="_blank" rel="noreferrer" aria-label="Chat with Timi on WhatsApp">
-    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H11l-5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
-    WhatsApp
+  <a class="wa-float" href="https://wa.me/2348139342375?text=Hello%20Aether%20Timi%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener" aria-label="Chat with Aether Timi on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 20.5l1.7-5.5A8.4 8.4 0 1 1 21 11.5z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-.8.7a3.5 3.5 0 0 1-1.6-1.6l.7-.8-1-2L9 9.5z" fill="currentColor" stroke="none"/></svg>
   </a>
 
   <script>
-  (function () {
-    var WA = '2348139342375', EMAIL = 'aethertimi@gmail.com';
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    document.getElementById('year').textContent = new Date().getFullYear();
+    (function(){
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var hoverOK = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      var $ = function(s,c){return (c||document).querySelector(s)}, $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
 
-    // Mobile menu
-    var menuBtn = document.getElementById('menu-btn'), nav = document.getElementById('nav');
-    menuBtn.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(open));
-    });
-    nav.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A') { nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }
-    });
+      /* year */
+      $('#year').textContent = new Date().getFullYear();
 
-    // Hero demo: live invitation card
-    var phone = document.getElementById('phone'), body = document.getElementById('phone-body');
-    var kicker = document.getElementById('kicker'), pname = document.getElementById('pname');
-    var input = document.getElementById('name-input'), cta = document.getElementById('demo-cta');
-    var copy = {
-      birthday: ['Happy birthday,', 'birthday'],
-      wedding:  ['Join us to celebrate', 'wedding'],
-      proposal: ['A question for', 'proposal'],
-      party:    ['The party is for', 'party']
-    };
-    var palettes = {
-      birthday: ['#ffffff', '#3a0f2a', '#ffd23f'],
-      wedding:  ['#b08a5b', '#3e3226', '#ffffff'],
-      proposal: ['#ffd9df', '#ffffff', '#ffd23f'],
-      party:    ['#5de7e8', '#ffd23f', '#ffffff']
-    };
-    function occasion() { var c = document.querySelector('input[name="occasion"]:checked'); return c ? c.value : 'birthday'; }
-    function burst() {
-      if (reduce) return;
-      var colors = palettes[occasion()];
-      for (var i = 0; i < 28; i++) {
-        var p = document.createElement('i');
-        p.className = 'confetti';
-        p.style.background = colors[i % colors.length];
-        phone.appendChild(p);
-        var dx = (Math.random() - 0.5) * 300, dy = (Math.random() - 0.7) * 320, rot = Math.random() * 720 - 360;
-        var a = p.animate([
-          { transform: 'translate(0,0) rotate(0deg)', opacity: 1 },
-          { transform: 'translate(' + dx + 'px,' + (dy + 120) + 'px) rotate(' + rot + 'deg)', opacity: 0 }
-        ], { duration: 900 + Math.random() * 600, easing: 'cubic-bezier(.2,.7,.3,1)' });
-        a.onfinish = (function (el) { return function () { el.remove(); }; })(p);
+      /* mobile menu */
+      var menuBtn = $('#menuBtn'), navLinks = $('#navLinks');
+      function closeMenu(){navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}
+      menuBtn.addEventListener('click', function(){
+        var open = navLinks.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', String(open));
+      });
+      $$('a', navLinks).forEach(function(a){a.addEventListener('click', closeMenu)});
+      document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeMenu(); });
+
+      /* scroll reveal */
+      var revealEls = $$('.reveal');
+      if ('IntersectionObserver' in window && !reduce) {
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(en){ if(en.isIntersecting){ var t = en.target; t.classList.add('visible'); io.unobserve(t); setTimeout(function(){ t.classList.add('settled'); }, 1500); } });
+        }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+        revealEls.forEach(function(el){io.observe(el)});
+      } else { revealEls.forEach(function(el){el.classList.add('visible')}); }
+
+      /* animated nav indicator + scroll spy */
+      var ind = $('#navInd'), links = $$('a', navLinks);
+      function moveInd(a){
+        if(!a || window.innerWidth<=820){return;}
+        var pr = navLinks.getBoundingClientRect(), r = a.getBoundingClientRect();
+        ind.style.width = (r.width-28)+'px';
+        ind.style.transform = 'translateX('+(r.left-pr.left+14)+'px)';
       }
-    }
-    function update() {
-      var type = occasion(), name = input.value.trim() || 'you';
-      phone.setAttribute('data-theme', type);
-      phone.setAttribute('data-long', String(name.length > 9));
-      kicker.textContent = copy[type][0];
-      pname.textContent = name;
-      cta.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent("Hi Timi, I'd like a " + copy[type][1] + ' website for ' + name + '.');
-    }
-    input.addEventListener('input', update);
-    document.querySelectorAll('input[name="occasion"]').forEach(function (r) {
-      r.addEventListener('change', function () { update(); burst(); });
-    });
-    body.addEventListener('click', burst);
-    update();
+      var activeLink = links[0];
+      function setActive(id){
+        links.forEach(function(a){
+          var on = a.getAttribute('href')==='#'+id;
+          if(on){a.setAttribute('aria-current','true'); activeLink=a;} else a.removeAttribute('aria-current');
+        });
+        moveInd(activeLink);
+      }
+      links.forEach(function(a){
+        a.addEventListener('mouseenter', function(){moveInd(a)});
+        a.addEventListener('focus', function(){moveInd(a)});
+      });
+      navLinks.addEventListener('mouseleave', function(){moveInd(activeLink)});
+      window.addEventListener('resize', function(){moveInd(activeLink)});
+      var ids = ['home','services','work','process','about','contact'];
+      var secs = ids.map(function(i){return document.getElementById(i)}).filter(Boolean);
+      if ('IntersectionObserver' in window) {
+        var spy = new IntersectionObserver(function(entries){
+          entries.forEach(function(en){ if(en.isIntersecting) setActive(en.target.id); });
+        }, {rootMargin:'-45% 0px -50% 0px'});
+        secs.forEach(function(s){spy.observe(s)});
+      }
+      setActive('home');
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){moveInd(activeLink)});
 
-    // Contact form → WhatsApp or email
-    var form = document.getElementById('project-form'), err = form.querySelector('.form-error');
-    function message() {
-      var d = new FormData(form);
-      var n = String(d.get('name') || '').trim(), s = String(d.get('service') || ''), m = String(d.get('message') || '').trim();
-      return { ok: n && m, service: s, text: 'Hi Timi, my name is ' + n + '.\nI need: ' + s + '.\n\n' + m };
-    }
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var m = message(); err.hidden = !!m.ok;
-      if (m.ok) window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(m.text), '_blank', 'noopener');
-    });
-    document.getElementById('send-email').addEventListener('click', function () {
-      var m = message(); err.hidden = !!m.ok;
-      if (m.ok) window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Project enquiry: ' + m.service) + '&body=' + encodeURIComponent(m.text);
-    });
-  })();
+      /* scroll progress + restrained parallax */
+      var prog = $('#progress'), glows = $$('.glow'), ticking = false;
+      function onScroll(){
+        if(ticking) return; ticking = true;
+        requestAnimationFrame(function(){
+          var h = document.documentElement.scrollHeight - innerHeight, y = scrollY;
+          prog.style.transform = 'scaleX('+(h>0?Math.min(y/h,1):0)+')';
+          if(!reduce && y < 1400) glows.forEach(function(g){ g.style.transform = 'translate3d(0,'+(y*parseFloat(g.dataset.speed))+'px,0)'; });
+          ticking = false;
+        });
+      }
+      addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+
+      /* contact form -> WhatsApp or email */
+      var WA = '2348139342375', EMAIL = 'Aethertimi@gmail.com';
+      var form = $('#project-form');
+      if (form) {
+        var err = $('.form-error', form);
+        var build = function(){
+          var d = new FormData(form), n = String(d.get('name')||'').trim(), sv = String(d.get('service')||''), m = String(d.get('message')||'').trim();
+          return {ok: !!(n && m), service: sv, text: 'Hello Aether Timi, my name is ' + n + '.\nI need: ' + sv + '.\n\n' + m};
+        };
+        form.addEventListener('submit', function(e){
+          e.preventDefault(); var b = build(); err.hidden = b.ok;
+          if (b.ok) window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(b.text), '_blank', 'noopener');
+        });
+        $('#send-email').addEventListener('click', function(){
+          var b = build(); err.hidden = b.ok;
+          if (b.ok) window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Project Enquiry: ' + b.service) + '&body=' + encodeURIComponent(b.text);
+        });
+      }
+
+      /* pointer tilt on cards + hero card */
+      if (!reduce && hoverOK) {
+        $$('.tilt').forEach(function(card){
+          card.addEventListener('pointermove', function(e){
+            var r = card.getBoundingClientRect(), px = (e.clientX-r.left)/r.width-.5, py = (e.clientY-r.top)/r.height-.5;
+            card.style.transform = 'perspective(900px) rotateX('+(-py*6).toFixed(2)+'deg) rotateY('+(px*7).toFixed(2)+'deg) translateY(-6px)';
+          });
+          card.addEventListener('pointerleave', function(){ card.style.transform=''; });
+        });
+        var vis = $('.visual'), inner = $('.tilt-inner');
+        if (vis && inner) {
+          vis.addEventListener('pointermove', function(e){
+            var r = vis.getBoundingClientRect(), px = (e.clientX-r.left)/r.width-.5, py = (e.clientY-r.top)/r.height-.5;
+            inner.style.transform = 'rotateX('+(-py*10).toFixed(2)+'deg) rotateY('+(px*12).toFixed(2)+'deg)';
+          });
+          vis.addEventListener('pointerleave', function(){ inner.style.transform=''; });
+        }
+      }
+    })();
   </script>
 </body>
 </html>
