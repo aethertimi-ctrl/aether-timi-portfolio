@@ -12,6 +12,7 @@ Live at https://aether-timi-portfolio.vercel.app
 ## Features
 - Original A+T monogram logo, drawn as vectors
 - Futuristic dark design with motion that respects `prefers-reduced-motion`
+- Light and dark themes: follows the visitor's system setting, with a toggle in the header that remembers their choice
 - Responsive on mobile, tablet and desktop, with keyboard-friendly navigation
 - Selected work section featuring projects from GitHub
 - Contact form that opens a ready-to-send WhatsApp or email message

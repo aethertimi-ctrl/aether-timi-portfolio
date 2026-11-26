@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
+  <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#080D1A">
   <title>Page not found — Aether Timi</title>
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -15,10 +16,16 @@
     p{margin:0;max-width:28em;color:#9BAAC3}
     a.btn{padding:14px 24px;border-radius:999px;background:linear-gradient(110deg,#3477F6,#53BFFF);color:#06101F;font-weight:700;font-size:14px;text-decoration:none}
     a:focus-visible{outline:2px solid #69D8FF;outline-offset:3px}
+    @media (prefers-color-scheme: light){
+      body{background:radial-gradient(60% 50% at 80% 0%,rgba(37,99,235,.16),transparent 70%),#F4F7FD;color:#0B1426}
+      h1{background:linear-gradient(100deg,#1D4ED8,#2A7BE8 55%,#0891B2);-webkit-background-clip:text;background-clip:text}
+      p{color:#4A5B78}
+      a:focus-visible{outline-color:#2563EB}
+    }
   </style>
 </head>
 <body>
-  <img src="/assets/logo-horizontal-dark.svg" width="157" height="36" alt="Aether Timi">
+  <picture><source srcset="/assets/logo-horizontal-light.svg" media="(prefers-color-scheme: light)"><img src="/assets/logo-horizontal-dark.svg" width="157" height="36" alt="Aether Timi"></picture>
   <h1>This page doesn't exist.</h1>
   <p>The link may be old or mistyped. Everything you need is one click away.</p>
   <a class="btn" href="/">Back to Aether Timi</a>
