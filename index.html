@@ -278,6 +278,13 @@
     .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(105,216,255,.18)}
     .field ::placeholder{color:#6F7E99}
     .form-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+    :root[data-theme="light"] .form-status{color:#0B7A55}
+    :root[data-theme="light"] .form-status.bad,:root[data-theme="light"] .form-error{color:#B4233A}
+    .trap{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+    .opt{font-weight:400;opacity:.7}
+    .form-status{margin-top:14px;font-size:14px;font-weight:500;color:var(--mint)}
+    .form-status.bad{color:#FF9AA8}
+    .form-status a{text-decoration:underline}
     .form-error{margin-top:14px;color:#FF9AA8;font-size:14px;font-weight:500}
     .footer-links{flex-wrap:wrap}
     @media (max-width:900px){.contact-layout{grid-template-columns:1fr}}
@@ -634,11 +641,14 @@
           <form class="card form reveal" id="project-form" novalidate>
             <h3>Start with a few details</h3>
             <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="f-email">Your email <span class="opt">(needed to reply by email)</span></label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email"></div>
             <div class="field"><label for="f-service">What do you need?</label>
               <select id="f-service" name="service"><option>Birthday website</option><option>Wedding website</option><option>Proposal page</option><option>Event or landing page</option><option>Business website</option><option>Branding &amp; design</option><option>Something else</option></select></div>
             <div class="field"><label for="f-msg">About your project</label><textarea id="f-msg" name="message" required placeholder="What is the occasion or goal, when do you need it, and what look do you have in mind?"></textarea></div>
             <div class="form-actions"><button class="btn btn-primary" type="submit">Send on WhatsApp <span class="arr" aria-hidden="true">↗</span></button><button class="btn btn-outline" type="button" id="send-email">Send by email</button></div>
+            <input class="trap" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
             <p class="form-error" role="alert" hidden>Please add your name and a short note before sending.</p>
+            <p class="form-status" role="status" aria-live="polite" hidden></p>
           </form>
         </div>
       </div>
@@ -768,9 +778,23 @@
           e.preventDefault(); var b = build(); err.hidden = b.ok;
           if (b.ok) window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(b.text), '_blank', 'noopener');
         });
-        $('#send-email').addEventListener('click', function(){
-          var b = build(); err.hidden = b.ok;
-          if (b.ok) window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Project Enquiry: ' + b.service) + '&body=' + encodeURIComponent(b.text);
+        var emailBtn = $('#send-email'), status = $('.form-status', form), FORMSPREE = 'https://formspree.io/f/moedbbyq';
+        var say = function(msg, bad){ status.textContent = msg; status.className = 'form-status' + (bad ? ' bad' : ''); status.hidden = false; };
+        emailBtn.addEventListener('click', function(){
+          var b = build(); err.hidden = b.ok; status.hidden = true;
+          if (!b.ok) return;
+          var addr = String(new FormData(form).get('email')||'').trim();
+          if (!addr || !$('#f-email').checkValidity()) { say('Please add a valid email address so we can reply.', true); $('#f-email').focus(); return; }
+          var label = emailBtn.textContent; emailBtn.disabled = true; emailBtn.textContent = 'Sending…';
+          var data = new FormData(form); data.append('_subject', 'Project Enquiry: ' + b.service);
+          fetch(FORMSPREE, {method:'POST', body:data, headers:{'Accept':'application/json'}})
+            .then(function(r){ if(!r.ok) throw new Error(r.status); form.reset(); say('Thank you! Your message has been sent. We will reply to ' + addr + ' soon.'); })
+            .catch(function(){
+              status.textContent = 'Sorry, that did not send. Please '; status.className = 'form-status bad';
+              var a = document.createElement('a'); a.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Project Enquiry: ' + b.service) + '&body=' + encodeURIComponent(b.text); a.textContent = 'email us directly';
+              status.appendChild(a); status.appendChild(document.createTextNode(' or use WhatsApp.')); status.hidden = false;
+            })
+            .then(function(){ emailBtn.disabled = false; emailBtn.textContent = label; });
         });
       }
 
