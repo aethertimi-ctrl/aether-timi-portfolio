@@ -91,7 +91,7 @@
     .btn .arr{display:inline-block;transition:transform .3s var(--ease)}
     .btn:hover .arr{transform:translate(3px,-3px)}
     .btn-down:hover .arr{transform:translateY(3px)}
-    .btn-primary{background:linear-gradient(110deg,#3477F6,#53BFFF);color:#06101F;box-shadow:0 10px 30px rgba(46,119,246,.25)}
+    .btn-primary{background:linear-gradient(110deg,#3477F6,#53BFFF) border-box;color:#06101F;box-shadow:0 10px 30px rgba(46,119,246,.25)}
     .btn-primary::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-120%);transition:transform .7s var(--ease)}
     .btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(46,119,246,.4)}
     .btn-primary:hover::after{transform:translateX(120%)}
@@ -482,6 +482,8 @@
       .js .reveal,.js .rise,.js h1 .w{opacity:1!important;transform:none!important}
       .process-grid::before{transform:scaleX(1)}
     }
+      /* gradients fill the border box too, so no opposite-colour edge line shows at the sides */
+    .core-card,.mini-screen,.shard{background-origin:border-box}
   </style>
 </head>
 <body>
