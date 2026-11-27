@@ -430,6 +430,11 @@
       .footer-inner{flex-direction:column;align-items:flex-start}
       .hero-actions .btn{flex:1 1 100%}
     }
+    /* comfortable tap targets (44px) */
+    .nav-links a{padding-block:12px}
+    .social a{padding-block:11px}
+    .brand,.footer-links a,.work-links .link{display:inline-flex;align-items:center;min-height:44px}
+    .work-note .link{display:inline-block;padding-block:12px;margin-block:-12px}
     @media (prefers-reduced-motion:reduce){
       *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
       .js .reveal,.js .rise,.js h1 .w{opacity:1!important;transform:none!important}
