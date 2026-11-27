@@ -368,7 +368,7 @@
     :root[data-theme="light"] .field ::placeholder{color:#8392AD}
     :root[data-theme="light"] .form-error{color:#C0243B}
     :root[data-theme="light"] .footer-links a:hover{color:var(--accent)}
-    @media (max-width:820px){
+    @media (max-width:1020px){
       :root[data-theme="light"] .nav-links{background:#F4F7FD}
     }
 
@@ -387,6 +387,18 @@
     .founder-content blockquote{margin:0 0 30px;padding:2px 0 2px 18px;border-left:3px solid var(--blue);color:var(--accent);font:600 18px/1.5 var(--head)}
     :root[data-theme="light"] .founder-image img{box-shadow:0 24px 60px rgba(24,48,102,.22)}
     @media (max-width:900px){.founder-grid{grid-template-columns:1fr;gap:48px}.founder-image{width:min(100%,380px);margin-inline:auto}}
+
+    /* language switcher */
+    .lang{position:relative;display:inline-flex;align-items:center;height:44px}
+    .lang svg{position:absolute;left:13px;width:18px;height:18px;pointer-events:none;color:var(--text)}
+    .lang select{-webkit-appearance:none;appearance:none;height:44px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--text);font:500 13px var(--body);padding:0 30px 0 38px;cursor:pointer;transition:border-color .25s,background .25s}
+    .lang select:hover{border-color:var(--cyan);background:rgba(105,216,255,.08)}
+    .lang select option{background:#10192B;color:#F4F7FF}
+    .lang::after{content:"";position:absolute;right:14px;top:50%;width:6px;height:6px;border-right:1.6px solid var(--muted);border-bottom:1.6px solid var(--muted);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+    :root[data-theme="light"] .lang select{background:rgba(255,255,255,.7)}
+    :root[data-theme="light"] .lang select option{background:#fff;color:#0B1426}
+    .nav-links a{white-space:nowrap}
+    @media (max-width:620px){.lang select{width:44px;padding:0;color:transparent}.lang::after{display:none}.lang svg{left:13px}}
 
     /* motion */
     .js .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
@@ -418,7 +430,7 @@
       .stats-grid{grid-template-columns:1fr;gap:18px}
       section{padding:84px 0}
     }
-    @media (max-width:820px){
+    @media (max-width:1020px){
       .menu-btn{display:block}
       .nav-cta{display:none}
       .nav-links{position:absolute;left:0;right:0;top:78px;flex-direction:column;align-items:stretch;gap:0;padding:12px 22px 22px;background:#080D1A;border-bottom:1px solid var(--line);transform:translateY(-12px);opacity:0;visibility:hidden;transition:opacity .3s,transform .3s var(--ease),visibility .3s}
@@ -450,7 +462,7 @@
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
   <div class="ambient" aria-hidden="true"></div>
   <div class="progress" id="progress" aria-hidden="true"></div>
 
@@ -458,16 +470,18 @@
     <nav class="container" aria-label="Primary">
       <a class="brand" href="#home" aria-label="Aether Timi — home"><img class="logo-dark" src="assets/logo-horizontal-dark.svg" width="157" height="36" alt="Aether Timi"><img class="logo-light" src="assets/logo-horizontal-light.svg" width="157" height="36" alt="Aether Timi"></a>
       <div class="nav-links" id="navLinks">
-        <a href="#home">Home</a><a href="#services">Services</a><a href="#work">Our Work</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a>
+        <a href="#home" data-i18n="nav_home">Home</a><a href="#services" data-i18n="nav_services">Services</a><a href="#work" data-i18n="nav_work">Our Work</a><a href="#process" data-i18n="nav_process">Process</a><a href="#about" data-i18n="nav_about">About</a><a href="#contact" data-i18n="nav_contact">Contact</a>
         <span class="nav-ind" id="navInd" aria-hidden="true"></span>
       </div>
       <div class="nav-actions">
+      <div class="lang"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        <select id="langSel" data-i18n-aria="lang_label" aria-label="Language"><option value="en">English</option><option value="ha">Hausa</option><option value="yo">Yorùbá</option><option value="ig">Igbo</option></select></div>
       <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch to light theme" title="Switch theme">
         <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
         <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
       </button>
-      <a class="btn btn-primary nav-cta" href="#contact">Let's Talk <span class="arr" aria-hidden="true">↗</span></a>
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      <a class="btn btn-primary nav-cta" href="#contact" data-i18n="nav_cta">Let's Talk <span class="arr" aria-hidden="true">↗</span></a>
+      <button class="menu-btn" id="menuBtn" data-i18n-aria="menu_label" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
       </div>
     </nav>
   </header>
@@ -478,67 +492,67 @@
       <div class="glow g2" data-speed="-0.08" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow rise" style="--d:0s"><span class="pulse"></span> Creative thinking. Intelligent execution.</div>
-          <h1 aria-label="We build digital experiences that move brands forward.">
+          <div class="eyebrow rise" style="--d:0s" data-i18n="eyebrow"><span class="pulse"></span> Creative thinking. Intelligent execution.</div>
+          <h1 id="h1" aria-label="We build digital experiences that move brands forward.">
             <span class="w" style="--i:0" aria-hidden="true">We</span> <span class="w" style="--i:1" aria-hidden="true">build</span> <span class="w" style="--i:2" aria-hidden="true">digital</span> <span class="w" style="--i:3" aria-hidden="true">experiences</span>
             <span class="gradient"><span class="w" style="--i:4" aria-hidden="true">that</span> <span class="w" style="--i:5" aria-hidden="true">move</span> <span class="w" style="--i:6" aria-hidden="true">brands</span> <span class="w" style="--i:7" aria-hidden="true">forward.</span></span>
           </h1>
-          <p class="hero-copy rise" style="--d:.75s">We transform ambitious ideas into extraordinary digital experiences — from celebration and event websites to landing pages and distinctive brand identities.</p>
+          <p class="hero-copy rise" style="--d:.75s" data-i18n="hero_copy">We transform ambitious ideas into extraordinary digital experiences — from celebration and event websites to landing pages and distinctive brand identities.</p>
           <div class="hero-actions rise" style="--d:.9s">
-            <a class="btn btn-primary" href="#contact">Start a project <span class="arr" aria-hidden="true">↗</span></a>
-            <a class="btn btn-outline btn-down" href="#work">Explore our work <span class="arr" aria-hidden="true">↓</span></a>
+            <a class="btn btn-primary" href="#contact" data-i18n="hero_start">Start a project <span class="arr" aria-hidden="true">↗</span></a>
+            <a class="btn btn-outline btn-down" href="#work" data-i18n="hero_explore">Explore our work <span class="arr" aria-hidden="true">↓</span></a>
           </div>
-          <div class="micro-trust rise" style="--d:1.05s"><span class="micro-line"></span> Strategy · Design · Development · Based in Nigeria, working worldwide</div>
+          <div class="micro-trust rise" style="--d:1.05s" data-i18n="micro"><span class="micro-line"></span> Strategy · Design · Development · Based in Nigeria, working worldwide</div>
         </div>
         <div class="visual rise" style="--d:.5s" role="img" aria-label="Abstract illustration of a digital interface orbiting a glowing sphere">
           <div class="orb"></div>
           <div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"><i></i></div>
           <div class="core-card" id="coreCard">
             <div class="tilt-inner">
-              <div class="card-top"><span>Digital experience / 001</span><span class="dots"><i></i><i></i><i></i></span></div>
+              <div class="card-top"><span data-i18n="card_top">Digital experience / 001</span><span class="dots"><i></i><i></i><i></i></span></div>
               <div class="mini-screen">
                 <div class="screen-line big"></div><div class="screen-line"></div><div class="screen-line short"></div>
                 <div class="screen-grid"><span></span><span></span><span></span></div>
               </div>
-              <div class="card-bottom"><span>Designed for impact</span><span class="status">● LIVE CONCEPT</span></div>
+              <div class="card-bottom"><span data-i18n="card_bottom">Designed for impact</span><span class="status" data-i18n="card_status">● LIVE CONCEPT</span></div>
             </div>
           </div>
-          <span class="chip c1">AI-assisted</span><span class="chip c2">Human-guided</span><span class="shard"></span>
+          <span class="chip c1" data-i18n="ai">AI-assisted</span><span class="chip c2" data-i18n="human">Human-guided</span><span class="shard"></span>
         </div>
       </div>
     </section>
 
     <div class="stats">
       <div class="container stats-grid">
-        <div class="stat reveal"><strong>Design-led</strong><span>Every detail has a purpose</span></div>
-        <div class="stat reveal" style="--d:.1s"><strong>AI-assisted</strong><span>Smarter, more efficient workflows</span></div>
-        <div class="stat reveal" style="--d:.2s"><strong>Human-guided</strong><span>Thoughtful creative direction</span></div>
+        <div class="stat reveal"><strong data-i18n="stat1">Design-led</strong><span data-i18n="stat1d">Every detail has a purpose</span></div>
+        <div class="stat reveal" style="--d:.1s"><strong data-i18n="ai">AI-assisted</strong><span data-i18n="stat2d">Smarter, more efficient workflows</span></div>
+        <div class="stat reveal" style="--d:.2s"><strong data-i18n="human">Human-guided</strong><span data-i18n="stat3d">Thoughtful creative direction</span></div>
       </div>
     </div>
 
     <section id="services">
       <div class="container">
-        <div class="section-head reveal"><div class="kicker">What we do</div><h2>Digital solutions built around <span class="gradient">your next move.</span></h2><p>Whether you're starting from zero or ready to elevate an existing brand, we bring the strategy, design and development together.</p></div>
+        <div class="section-head reveal"><div class="kicker" data-i18n="svc_k">What we do</div><h2 data-i18n="svc_h">Digital solutions built around <span class="gradient">your next move.</span></h2><p data-i18n="svc_p">Whether you're starting from zero or ready to elevate an existing brand, we bring the strategy, design and development together.</p></div>
         <div class="services-grid">
           <article class="card service tilt reveal">
             <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2.5"/><path d="M3 9h18M8 21h8M12 18v3"/></svg></div>
-            <h3>Website Design &amp; Development</h3><p>Responsive, engaging websites that communicate your value and make it easy for customers to take action.</p>
-            <ul><li>Business and corporate websites</li><li>Landing pages and portfolios</li><li>E-commerce and website redesigns</li></ul>
+            <h3 data-i18n="s1h">Website Design &amp; Development</h3><p data-i18n="s1p">Responsive, engaging websites that communicate your value and make it easy for customers to take action.</p>
+            <ul><li data-i18n="s1a">Business and corporate websites</li><li data-i18n="s1b">Landing pages and portfolios</li><li data-i18n="s1c">E-commerce and website redesigns</li></ul>
           </article>
           <article class="card service tilt reveal" style="--d:.08s">
             <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8L19 16z"/></svg></div>
-            <h3>Interactive Digital Experiences</h3><p>Memorable, personalized websites that turn special moments, campaigns and events into experiences.</p>
-            <ul><li>Birthday, wedding and proposal websites</li><li>Event and celebration landing pages</li><li>Custom animations and interactions</li></ul>
+            <h3 data-i18n="s2h">Interactive Digital Experiences</h3><p data-i18n="s2p">Memorable, personalized websites that turn special moments, campaigns and events into experiences.</p>
+            <ul><li data-i18n="s2a">Birthday, wedding and proposal websites</li><li data-i18n="s2b">Event and celebration landing pages</li><li data-i18n="s2c">Custom animations and interactions</li></ul>
           </article>
           <article class="card service tilt reveal" style="--d:.16s">
             <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5M3 17.5l9 5 9-5" opacity=".6"/></svg></div>
-            <h3>Branding &amp; Creative Design</h3><p>Consistent visual systems and creative assets that help your business look confident and recognizable.</p>
-            <ul><li>Visual identity concepts</li><li>Promotional graphics</li><li>Social media design assets</li></ul>
+            <h3 data-i18n="s3h">Branding &amp; Creative Design</h3><p data-i18n="s3p">Consistent visual systems and creative assets that help your business look confident and recognizable.</p>
+            <ul><li data-i18n="s3a">Visual identity concepts</li><li data-i18n="s3b">Promotional graphics</li><li data-i18n="s3c">Social media design assets</li></ul>
           </article>
           <article class="card service tilt reveal" style="--d:.24s">
             <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
-            <h3>Digital Products</h3><p>Practical, ready-to-customize digital resources designed to help creators and businesses move faster.</p>
-            <ul><li>Website templates</li><li>Digital business resources</li><li>Customizable creative assets</li></ul>
+            <h3 data-i18n="s4h">Digital Products</h3><p data-i18n="s4p">Practical, ready-to-customize digital resources designed to help creators and businesses move faster.</p>
+            <ul><li data-i18n="s4a">Website templates</li><li data-i18n="s4b">Digital business resources</li><li data-i18n="s4c">Customizable creative assets</li></ul>
           </article>
         </div>
       </div>
@@ -546,36 +560,36 @@
 
     <section id="work">
       <div class="container">
-        <div class="section-head reveal"><div class="kicker">Selected work</div><h2>Good ideas deserve <span class="gradient">great execution.</span></h2><p>A selection of celebration and event websites built by Aether Timi. Open any live demo to see it in action.</p></div>
+        <div class="section-head reveal"><div class="kicker" data-i18n="wk_k">Selected work</div><h2 data-i18n="wk_h">Good ideas deserve <span class="gradient">great execution.</span></h2><p data-i18n="wk_p">A selection of celebration and event websites built by Aether Timi. Open any live demo to see it in action.</p></div>
         <div class="work-grid">
           <article class="card work-card reveal">
-            <div class="work-art art-birthday"><span class="badge">Birthday website</span><div class="bgfx"></div><div class="poster"><i>happy</i><b>birthday</b></div></div>
-            <div class="work-info"><h3>Burgundy &amp; Rose-Gold Birthday</h3><p>A responsive birthday website in burgundy and rose-gold, built to feel personal.</p><span class="tag">HTML · CSS · JavaScript</span>
-              <div class="work-links"><a class="link" href="https://birthday-website-nine-coral.vercel.app/" target="_blank" rel="noopener" aria-label="Live demo of the birthday website (opens in a new tab)">Live demo <span aria-hidden="true">↗</span></a></div></div>
+            <div class="work-art art-birthday"><span class="badge" data-i18n="badge_bd">Birthday website</span><div class="bgfx"></div><div class="poster"><i>happy</i><b>birthday</b></div></div>
+            <div class="work-info"><h3 data-i18n="w1h">Burgundy &amp; Rose-Gold Birthday</h3><p data-i18n="w1p">A responsive birthday website in burgundy and rose-gold, built to feel personal.</p><span class="tag">HTML · CSS · JavaScript</span>
+              <div class="work-links"><a class="link" href="https://birthday-website-nine-coral.vercel.app/" target="_blank" rel="noopener" aria-label="Live demo of the birthday website (opens in a new tab)" data-i18n="live">Live demo <span aria-hidden="true">↗</span></a></div></div>
           </article>
           <article class="card work-card reveal" style="--d:.1s">
-            <div class="work-art art-tiana"><span class="badge">Birthday website</span><div class="bgfx"></div><div class="poster"><b>A day<br>to celebrate</b></div></div>
-            <div class="work-info"><h3>Tiana Birthday Site</h3><p>A personalised birthday website with a warm, soft look and thoughtful details.</p><span class="tag">TypeScript · Vite · Tailwind</span>
-              <div class="work-links"><a class="link" href="https://tiana-template.vercel.app/" target="_blank" rel="noopener" aria-label="Live demo of the Tiana birthday site (opens in a new tab)">Live demo <span aria-hidden="true">↗</span></a></div></div>
+            <div class="work-art art-tiana"><span class="badge" data-i18n="badge_bd">Birthday website</span><div class="bgfx"></div><div class="poster"><b>A day<br>to celebrate</b></div></div>
+            <div class="work-info"><h3 data-i18n="w2h">Tiana Birthday Site</h3><p data-i18n="w2p">A personalised birthday website with a warm, soft look and thoughtful details.</p><span class="tag">TypeScript · Vite · Tailwind</span>
+              <div class="work-links"><a class="link" href="https://tiana-template.vercel.app/" target="_blank" rel="noopener" aria-label="Live demo of the Tiana birthday site (opens in a new tab)" data-i18n="live">Live demo <span aria-hidden="true">↗</span></a></div></div>
           </article>
           <article class="card work-card reveal" style="--d:.2s">
-            <div class="work-art art-rave"><span class="badge">Event website</span><div class="bgfx"></div><div class="poster"><b>iRAVE<em>2.0</em></b><small>THE OBLEE EDITION</small></div></div>
-            <div class="work-info"><h3>iRave, the Oblee Edition</h3><p>An event landing page that sets the mood before the first track drops.</p><span class="tag">TypeScript · Vite · Tailwind</span>
-              <div class="work-links"><a class="link" href="https://rave-template.vercel.app/" target="_blank" rel="noopener" aria-label="Live demo of the rave event site (opens in a new tab)">Live demo <span aria-hidden="true">↗</span></a></div></div>
+            <div class="work-art art-rave"><span class="badge" data-i18n="badge_ev">Event website</span><div class="bgfx"></div><div class="poster"><b>iRAVE<em>2.0</em></b><small>THE OBLEE EDITION</small></div></div>
+            <div class="work-info"><h3 data-i18n="w3h">iRave, the Oblee Edition</h3><p data-i18n="w3p">An event landing page that sets the mood before the first track drops.</p><span class="tag">TypeScript · Vite · Tailwind</span>
+              <div class="work-links"><a class="link" href="https://rave-template.vercel.app/" target="_blank" rel="noopener" aria-label="Live demo of the rave event site (opens in a new tab)" data-i18n="live">Live demo <span aria-hidden="true">↗</span></a></div></div>
           </article>
         </div>
-        <p class="work-note reveal">More on GitHub: a <a class="link" href="https://github.com/aethertimi-ctrl/wedding-template" target="_blank" rel="noopener">wedding template</a> and an <a class="link" href="https://github.com/aethertimi-ctrl/a-proposal-for-prince-" target="_blank" rel="noopener">interactive proposal page</a>. &nbsp;<a class="link" href="https://github.com/aethertimi-ctrl" target="_blank" rel="noopener">See all projects on GitHub <span aria-hidden="true">↗</span></a></p>
+        <p class="work-note reveal" data-i18n="wk_note">More on GitHub: a <a class="link" href="https://github.com/aethertimi-ctrl/wedding-template" target="_blank" rel="noopener">wedding template</a> and an <a class="link" href="https://github.com/aethertimi-ctrl/a-proposal-for-prince-" target="_blank" rel="noopener">interactive proposal page</a>. &nbsp;<a class="link" href="https://github.com/aethertimi-ctrl" target="_blank" rel="noopener">See all projects on GitHub <span aria-hidden="true">↗</span></a></p>
       </div>
     </section>
 
     <section id="process">
       <div class="container">
-        <div class="section-head reveal"><div class="kicker">How we work</div><h2>A thoughtful process. <span class="gradient">A better outcome.</span></h2><p>Clear communication and structured delivery keep every project moving in the right direction.</p></div>
+        <div class="section-head reveal"><div class="kicker" data-i18n="pr_k">How we work</div><h2 data-i18n="pr_h">A thoughtful process. <span class="gradient">A better outcome.</span></h2><p data-i18n="pr_p">Clear communication and structured delivery keep every project moving in the right direction.</p></div>
         <div class="process-grid reveal">
-          <div class="card step"><div class="step-num">01 / DISCOVER</div><h3>Understand</h3><p>We learn about your goals, audience, requirements and what success should look like.</p></div>
-          <div class="card step"><div class="step-num">02 / CREATE</div><h3>Design</h3><p>We shape the visual direction and experience around your brand and objectives.</p></div>
-          <div class="card step"><div class="step-num">03 / BUILD</div><h3>Develop</h3><p>We build, refine and test the experience across mobile, tablet and desktop.</p></div>
-          <div class="card step"><div class="step-num">04 / DELIVER</div><h3>Launch</h3><p>After your review and approval, we prepare your project for launch and handover.</p></div>
+          <div class="card step"><div class="step-num" data-i18n="st1n">01 / DISCOVER</div><h3 data-i18n="st1h">Understand</h3><p data-i18n="st1p">We learn about your goals, audience, requirements and what success should look like.</p></div>
+          <div class="card step"><div class="step-num" data-i18n="st2n">02 / CREATE</div><h3 data-i18n="st2h">Design</h3><p data-i18n="st2p">We shape the visual direction and experience around your brand and objectives.</p></div>
+          <div class="card step"><div class="step-num" data-i18n="st3n">03 / BUILD</div><h3 data-i18n="st3h">Develop</h3><p data-i18n="st3p">We build, refine and test the experience across mobile, tablet and desktop.</p></div>
+          <div class="card step"><div class="step-num" data-i18n="st4n">04 / DELIVER</div><h3 data-i18n="st4h">Launch</h3><p data-i18n="st4p">After your review and approval, we prepare your project for launch and handover.</p></div>
         </div>
       </div>
     </section>
@@ -583,13 +597,13 @@
     <section id="about">
       <div class="container">
         <div class="card about-panel reveal">
-          <div><div class="kicker">The Aether Timi approach</div><h2>Technology with a <span class="gradient">human perspective.</span></h2>
-            <p>Aether Timi is an independent digital agency built around a simple belief: technology should make good ideas more powerful. We combine creative direction, modern development tools and AI-assisted workflows while keeping human judgement at the centre of every decision.</p></div>
+          <div><div class="kicker" data-i18n="ab_k">The Aether Timi approach</div><h2 data-i18n="ab_h">Technology with a <span class="gradient">human perspective.</span></h2>
+            <p data-i18n="ab_p">Aether Timi is an independent digital agency built around a simple belief: technology should make good ideas more powerful. We combine creative direction, modern development tools and AI-assisted workflows while keeping human judgement at the centre of every decision.</p></div>
           <div class="principles">
-            <div class="principle"><span class="check" aria-hidden="true">✦</span><div><strong>Purpose before decoration</strong><span class="d">Design choices support a clear goal.</span></div></div>
-            <div class="principle"><span class="check" aria-hidden="true">✦</span><div><strong>Built for real devices</strong><span class="d">Responsive experiences across screen sizes.</span></div></div>
-            <div class="principle"><span class="check" aria-hidden="true">✦</span><div><strong>AI-assisted, human-reviewed</strong><span class="d">Efficiency without losing thoughtful oversight.</span></div></div>
-            <div class="principle"><span class="check" aria-hidden="true">✦</span><div><strong>Clear collaboration</strong><span class="d">Defined scope, feedback and delivery steps.</span></div></div>
+            <div class="principle"><span class="check" aria-hidden="true">✦</span><div><strong data-i18n="pc1">Purpose before decoration</strong><span class="d" data-i18n="pc1d">Design choices support a clear goal.</span></div></div>
+            <div class="principle"><span class="check" aria-hidden="true">✦</span><div><strong data-i18n="pc2">Built for real devices</strong><span class="d" data-i18n="pc2d">Responsive experiences across screen sizes.</span></div></div>
+            <div class="principle"><span class="check" aria-hidden="true">✦</span><div><strong data-i18n="pc3">AI-assisted, human-reviewed</strong><span class="d" data-i18n="pc3d">Efficiency without losing thoughtful oversight.</span></div></div>
+            <div class="principle"><span class="check" aria-hidden="true">✦</span><div><strong data-i18n="pc4">Clear collaboration</strong><span class="d" data-i18n="pc4d">Defined scope, feedback and delivery steps.</span></div></div>
           </div>
         </div>
       </div>
@@ -599,17 +613,17 @@
       <div class="container founder-grid">
         <figure class="founder-image reveal">
           <img src="assets/founder-portrait.webp" width="880" height="1100" alt="Timi, founder of Aether Timi" loading="lazy" decoding="async">
-          <figcaption class="image-label">The Founder</figcaption>
+          <figcaption class="image-label" data-i18n="fd_label">The Founder</figcaption>
         </figure>
         <div class="founder-content reveal" style="--d:.12s">
-          <div class="kicker">The mind behind the vision</div>
-          <h2 id="founder-title">Turning ideas into <span class="gradient">digital experiences.</span></h2>
-          <h3>The person behind Aether Timi.</h3>
-          <p class="founder-meta">Timi · Based in Nigeria · Working with clients anywhere</p>
-          <p class="founder-copy">I believe every great digital experience starts with an idea worth bringing to life. Through thoughtful website design, modern development and creative innovation, I build digital experiences that help businesses establish their presence and stand out online.</p>
-          <div class="founder-skills"><span class="tag">Website Design</span><span class="tag">Web Development</span><span class="tag">Digital Innovation</span></div>
-          <blockquote>"We Transform Ideas Into Digital Experiences."</blockquote>
-          <a class="btn btn-primary" href="#contact">Let's build something meaningful <span class="arr" aria-hidden="true">↗</span></a>
+          <div class="kicker" data-i18n="fd_k">The mind behind the vision</div>
+          <h2 id="founder-title" data-i18n="fd_h">Turning ideas into <span class="gradient">digital experiences.</span></h2>
+          <h3 data-i18n="fd_h3">The person behind Aether Timi.</h3>
+          <p class="founder-meta" data-i18n="fd_meta">Timi · Based in Nigeria · Working with clients anywhere</p>
+          <p class="founder-copy" data-i18n="fd_copy">I believe every great digital experience starts with an idea worth bringing to life. Through thoughtful website design, modern development and creative innovation, I build digital experiences that help businesses establish their presence and stand out online.</p>
+          <div class="founder-skills"><span class="tag" data-i18n="fd_t1">Website Design</span><span class="tag" data-i18n="fd_t2">Web Development</span><span class="tag" data-i18n="fd_t3">Digital Innovation</span></div>
+          <blockquote data-i18n="fd_q">"We Transform Ideas Into Digital Experiences."</blockquote>
+          <a class="btn btn-primary" href="#contact" data-i18n="fd_btn">Let's build something meaningful <span class="arr" aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
@@ -617,15 +631,15 @@
 
     <section style="padding-top:0">
       <div class="container">
-        <div class="card cta reveal"><div class="kicker">Have an idea?</div><h2>Let's create something <span class="gradient">worth remembering.</span></h2>
-          <p>Tell us what you have in mind. We'll discuss your goals and the right digital solution for your next step.</p>
-          <a class="btn btn-primary" href="https://wa.me/2348139342375?text=Hello%20Aether%20Timi%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Chat on WhatsApp <span class="arr" aria-hidden="true">↗</span></a></div>
+        <div class="card cta reveal"><div class="kicker" data-i18n="cta_k">Have an idea?</div><h2 data-i18n="cta_h">Let's create something <span class="gradient">worth remembering.</span></h2>
+          <p data-i18n="cta_p">Tell us what you have in mind. We'll discuss your goals and the right digital solution for your next step.</p>
+          <a class="btn btn-primary" href="https://wa.me/2348139342375?text=Hello%20Aether%20Timi%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" data-i18n="cta_btn">Chat on WhatsApp <span class="arr" aria-hidden="true">↗</span></a></div>
       </div>
     </section>
 
     <section id="contact" style="padding-top:0">
       <div class="container">
-        <div class="section-head reveal"><div class="kicker">Get in touch</div><h2>Your next project starts <span class="gradient">with a conversation.</span></h2><p>The quickest way to reach us is WhatsApp. Prefer to write it down first? Use the form and it will open a message with your details ready to send.</p></div>
+        <div class="section-head reveal"><div class="kicker" data-i18n="ct_k">Get in touch</div><h2 data-i18n="ct_h">Your next project starts <span class="gradient">with a conversation.</span></h2><p data-i18n="ct_p">The quickest way to reach us is WhatsApp. Prefer to write it down first? Use the form and it will open a message with your details ready to send.</p></div>
         <div class="contact-layout">
           <div class="contact-side">
             <div class="contact-grid">
@@ -636,18 +650,18 @@
                 <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></span>
                 <span><small>Email</small><strong>Aethertimi@gmail.com</strong></span></a>
             </div>
-            <p class="social reveal"><span>Find us on</span><a href="https://github.com/aethertimi-ctrl" target="_blank" rel="noopener">GitHub</a><a href="https://x.com/AetherTimi" target="_blank" rel="noopener">X</a><a href="https://www.linkedin.com/in/aether-timi" target="_blank" rel="noopener">LinkedIn</a></p>
+            <p class="social reveal"><span data-i18n="ct_social">Find us on</span><a href="https://github.com/aethertimi-ctrl" target="_blank" rel="noopener">GitHub</a><a href="https://x.com/AetherTimi" target="_blank" rel="noopener">X</a><a href="https://www.linkedin.com/in/aether-timi" target="_blank" rel="noopener">LinkedIn</a></p>
           </div>
           <form class="card form reveal" id="project-form" novalidate>
-            <h3>Start with a few details</h3>
-            <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
-            <div class="field"><label for="f-email">Your email <span class="opt">(needed to reply by email)</span></label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email"></div>
-            <div class="field"><label for="f-service">What do you need?</label>
-              <select id="f-service" name="service"><option>Birthday website</option><option>Wedding website</option><option>Proposal page</option><option>Event or landing page</option><option>Business website</option><option>Branding &amp; design</option><option>Something else</option></select></div>
-            <div class="field"><label for="f-msg">About your project</label><textarea id="f-msg" name="message" required placeholder="What is the occasion or goal, when do you need it, and what look do you have in mind?"></textarea></div>
-            <div class="form-actions"><button class="btn btn-primary" type="submit">Send on WhatsApp <span class="arr" aria-hidden="true">↗</span></button><button class="btn btn-outline" type="button" id="send-email">Send by email</button></div>
+            <h3 data-i18n="fm_h">Start with a few details</h3>
+            <div class="field"><label for="f-name" data-i18n="fm_name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="f-email" data-i18n="fm_email">Your email <span class="opt">(needed to reply by email)</span></label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email"></div>
+            <div class="field"><label for="f-service" data-i18n="fm_need">What do you need?</label>
+              <select id="f-service" name="service"><option value="Birthday website" data-i18n="o1">Birthday website</option><option value="Wedding website" data-i18n="o2">Wedding website</option><option value="Proposal page" data-i18n="o3">Proposal page</option><option value="Event or landing page" data-i18n="o4">Event or landing page</option><option value="Business website" data-i18n="o5">Business website</option><option value="Branding &amp; design" data-i18n="o6">Branding &amp; design</option><option value="Something else" data-i18n="o7">Something else</option></select></div>
+            <div class="field"><label for="f-msg" data-i18n="fm_about">About your project</label><textarea id="f-msg" name="message" required data-i18n-ph="ph_msg" placeholder="What is the occasion or goal, when do you need it, and what look do you have in mind?"></textarea></div>
+            <div class="form-actions"><button class="btn btn-primary" type="submit" data-i18n="fm_wa">Send on WhatsApp <span class="arr" aria-hidden="true">↗</span></button><button class="btn btn-outline" type="button" id="send-email" data-i18n="fm_mail">Send by email</button></div>
             <input class="trap" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <p class="form-error" role="alert" hidden>Please add your name and a short note before sending.</p>
+            <p class="form-error" role="alert" hidden data-i18n="fm_err">Please add your name and a short note before sending.</p>
             <p class="form-status" role="status" aria-live="polite" hidden></p>
           </form>
         </div>
@@ -658,8 +672,8 @@
   <footer>
     <div class="container footer-inner">
       <a class="brand" href="#home" aria-label="Aether Timi — back to top"><img class="logo-dark" src="assets/logo-horizontal-dark.svg" width="131" height="30" alt="Aether Timi" loading="lazy"><img class="logo-light" src="assets/logo-horizontal-light.svg" width="131" height="30" alt="Aether Timi" loading="lazy"></a>
-      <span>© <span id="year">2026</span> Aether Timi. All rights reserved.</span>
-      <div class="footer-links"><a href="#services">Services</a><a href="#work">Work</a><a href="#contact">Contact</a><a href="https://github.com/aethertimi-ctrl" target="_blank" rel="noopener">GitHub</a><a href="https://x.com/AetherTimi" target="_blank" rel="noopener">X</a><a href="https://www.linkedin.com/in/aether-timi" target="_blank" rel="noopener">LinkedIn</a></div>
+      <span data-i18n="ft_copy">© <span id="year">2026</span> Aether Timi. All rights reserved.</span>
+      <div class="footer-links"><a href="#services" data-i18n="nav_services">Services</a><a href="#work" data-i18n="ft_work">Work</a><a href="#contact" data-i18n="nav_contact">Contact</a><a href="https://github.com/aethertimi-ctrl" target="_blank" rel="noopener">GitHub</a><a href="https://x.com/AetherTimi" target="_blank" rel="noopener">X</a><a href="https://www.linkedin.com/in/aether-timi" target="_blank" rel="noopener">LinkedIn</a></div>
     </div>
   </footer>
 
@@ -679,14 +693,15 @@
 
       /* theme toggle: follows the system until the visitor chooses */
       var root = document.documentElement, themeBtn = $('#themeBtn'), themeMeta = $('meta[name="theme-color"]');
-      function applyTheme(t, animate){
+      function applyTheme(mode, animate){
         if (animate && !reduce) { root.classList.add('theme-anim'); setTimeout(function(){ root.classList.remove('theme-anim'); }, 450); }
-        root.setAttribute('data-theme', t);
-        if (themeMeta) themeMeta.setAttribute('content', t === 'light' ? '#F4F7FD' : '#080D1A');
+        root.setAttribute('data-theme', mode);
+        if (themeMeta) themeMeta.setAttribute('content', mode === 'light' ? '#F4F7FD' : '#080D1A');
         if (themeBtn) {
-          var next = t === 'light' ? 'dark' : 'light';
-          themeBtn.setAttribute('aria-label', 'Switch to ' + next + ' theme');
-          themeBtn.setAttribute('title', 'Switch to ' + next + ' theme');
+          var next = mode === 'light' ? 'dark' : 'light';
+          var lab = I18N ? t('theme_' + next) : 'Switch to ' + next + ' theme';
+          themeBtn.setAttribute('aria-label', lab);
+          themeBtn.setAttribute('title', lab);
         }
       }
       applyTheme(root.getAttribute('data-theme') || 'dark', false);
@@ -721,7 +736,7 @@
       /* animated nav indicator + scroll spy */
       var ind = $('#navInd'), links = $$('a', navLinks);
       function moveInd(a){
-        if(!a || window.innerWidth<=820){return;}
+        if(!a || window.innerWidth<=1020){return;}
         var pr = navLinks.getBoundingClientRect(), r = a.getBoundingClientRect();
         ind.style.width = (r.width-28)+'px';
         ind.style.transform = 'translateX('+(r.left-pr.left+14)+'px)';
@@ -765,6 +780,45 @@
       addEventListener('scroll', onScroll, {passive:true}); onScroll();
 
 
+      /* language switcher */
+      var I18N = {"en": {"skip": "Skip to content", "nav_home": "Home", "nav_services": "Services", "nav_work": "Our Work", "nav_process": "Process", "nav_about": "About", "nav_contact": "Contact", "nav_cta": "Let's Talk <span class=\"arr\" aria-hidden=\"true\">↗</span>", "eyebrow": "<span class=\"pulse\"></span> Creative thinking. Intelligent execution.", "hero_copy": "We transform ambitious ideas into extraordinary digital experiences — from celebration and event websites to landing pages and distinctive brand identities.", "hero_start": "Start a project <span class=\"arr\" aria-hidden=\"true\">↗</span>", "hero_explore": "Explore our work <span class=\"arr\" aria-hidden=\"true\">↓</span>", "micro": "<span class=\"micro-line\"></span> Strategy · Design · Development · Based in Nigeria, working worldwide", "card_top": "Digital experience / 001", "card_bottom": "Designed for impact", "card_status": "● LIVE CONCEPT", "ai": "AI-assisted", "human": "Human-guided", "stat1": "Design-led", "stat1d": "Every detail has a purpose", "stat2d": "Smarter, more efficient workflows", "stat3d": "Thoughtful creative direction", "svc_k": "What we do", "svc_h": "Digital solutions built around <span class=\"gradient\">your next move.</span>", "svc_p": "Whether you're starting from zero or ready to elevate an existing brand, we bring the strategy, design and development together.", "s1h": "Website Design &amp; Development", "s1p": "Responsive, engaging websites that communicate your value and make it easy for customers to take action.", "s1a": "Business and corporate websites", "s1b": "Landing pages and portfolios", "s1c": "E-commerce and website redesigns", "s2h": "Interactive Digital Experiences", "s2p": "Memorable, personalized websites that turn special moments, campaigns and events into experiences.", "s2a": "Birthday, wedding and proposal websites", "s2b": "Event and celebration landing pages", "s2c": "Custom animations and interactions", "s3h": "Branding &amp; Creative Design", "s3p": "Consistent visual systems and creative assets that help your business look confident and recognizable.", "s3a": "Visual identity concepts", "s3b": "Promotional graphics", "s3c": "Social media design assets", "s4h": "Digital Products", "s4p": "Practical, ready-to-customize digital resources designed to help creators and businesses move faster.", "s4a": "Website templates", "s4b": "Digital business resources", "s4c": "Customizable creative assets", "wk_k": "Selected work", "wk_h": "Good ideas deserve <span class=\"gradient\">great execution.</span>", "wk_p": "A selection of celebration and event websites built by Aether Timi. Open any live demo to see it in action.", "badge_bd": "Birthday website", "badge_ev": "Event website", "w1h": "Burgundy &amp; Rose-Gold Birthday", "w1p": "A responsive birthday website in burgundy and rose-gold, built to feel personal.", "w2h": "Tiana Birthday Site", "w2p": "A personalised birthday website with a warm, soft look and thoughtful details.", "w3h": "iRave, the Oblee Edition", "w3p": "An event landing page that sets the mood before the first track drops.", "live": "Live demo <span aria-hidden=\"true\">↗</span>", "wk_note": "More on GitHub: a <a class=\"link\" href=\"https://github.com/aethertimi-ctrl/wedding-template\" target=\"_blank\" rel=\"noopener\">wedding template</a> and an <a class=\"link\" href=\"https://github.com/aethertimi-ctrl/a-proposal-for-prince-\" target=\"_blank\" rel=\"noopener\">interactive proposal page</a>. &nbsp;<a class=\"link\" href=\"https://github.com/aethertimi-ctrl\" target=\"_blank\" rel=\"noopener\">See all projects on GitHub <span aria-hidden=\"true\">↗</span></a>", "pr_k": "How we work", "pr_h": "A thoughtful process. <span class=\"gradient\">A better outcome.</span>", "pr_p": "Clear communication and structured delivery keep every project moving in the right direction.", "st1n": "01 / DISCOVER", "st1h": "Understand", "st1p": "We learn about your goals, audience, requirements and what success should look like.", "st2n": "02 / CREATE", "st2h": "Design", "st2p": "We shape the visual direction and experience around your brand and objectives.", "st3n": "03 / BUILD", "st3h": "Develop", "st3p": "We build, refine and test the experience across mobile, tablet and desktop.", "st4n": "04 / DELIVER", "st4h": "Launch", "st4p": "After your review and approval, we prepare your project for launch and handover.", "ab_k": "The Aether Timi approach", "ab_h": "Technology with a <span class=\"gradient\">human perspective.</span>", "ab_p": "Aether Timi is an independent digital agency built around a simple belief: technology should make good ideas more powerful. We combine creative direction, modern development tools and AI-assisted workflows while keeping human judgement at the centre of every decision.", "pc1": "Purpose before decoration", "pc1d": "Design choices support a clear goal.", "pc2": "Built for real devices", "pc2d": "Responsive experiences across screen sizes.", "pc3": "AI-assisted, human-reviewed", "pc3d": "Efficiency without losing thoughtful oversight.", "pc4": "Clear collaboration", "pc4d": "Defined scope, feedback and delivery steps.", "fd_label": "The Founder", "fd_k": "The mind behind the vision", "fd_h": "Turning ideas into <span class=\"gradient\">digital experiences.</span>", "fd_h3": "The person behind Aether Timi.", "fd_meta": "Timi · Based in Nigeria · Working with clients anywhere", "fd_copy": "I believe every great digital experience starts with an idea worth bringing to life. Through thoughtful website design, modern development and creative innovation, I build digital experiences that help businesses establish their presence and stand out online.", "fd_t1": "Website Design", "fd_t2": "Web Development", "fd_t3": "Digital Innovation", "fd_q": "\"We Transform Ideas Into Digital Experiences.\"", "fd_btn": "Let's build something meaningful <span class=\"arr\" aria-hidden=\"true\">↗</span>", "cta_k": "Have an idea?", "cta_h": "Let's create something <span class=\"gradient\">worth remembering.</span>", "cta_p": "Tell us what you have in mind. We'll discuss your goals and the right digital solution for your next step.", "cta_btn": "Chat on WhatsApp <span class=\"arr\" aria-hidden=\"true\">↗</span>", "ct_k": "Get in touch", "ct_h": "Your next project starts <span class=\"gradient\">with a conversation.</span>", "ct_p": "The quickest way to reach us is WhatsApp. Prefer to write it down first? Use the form and it will open a message with your details ready to send.", "ct_social": "Find us on", "fm_h": "Start with a few details", "fm_name": "Your name", "fm_email": "Your email <span class=\"opt\">(needed to reply by email)</span>", "fm_need": "What do you need?", "fm_about": "About your project", "fm_wa": "Send on WhatsApp <span class=\"arr\" aria-hidden=\"true\">↗</span>", "fm_mail": "Send by email", "fm_err": "Please add your name and a short note before sending.", "ft_copy": "© <span id=\"year\">2026</span> Aether Timi. All rights reserved.", "ft_work": "Work", "o1": "Birthday website", "o2": "Wedding website", "o3": "Proposal page", "o4": "Event or landing page", "o5": "Business website", "o6": "Branding &amp; design", "o7": "Something else", "ph_msg": "What is the occasion or goal, when do you need it, and what look do you have in mind?", "lang_label": "Language", "menu_label": "Toggle navigation", "theme_light": "Switch to light theme", "theme_dark": "Switch to dark theme", "sending": "Sending…", "sent": "Thank you! Your message has been sent. We will reply to {addr} soon.", "bad_email": "Please add a valid email address so we can reply.", "fail1": "Sorry, that did not send. Please ", "fail_link": "email us directly", "fail2": " or use WhatsApp.", "title": "Aether Timi — Digital Experiences, Intelligently Crafted", "meta_desc": "Aether Timi is an AI-assisted digital agency. We transform ambitious ideas into extraordinary digital experiences: websites, interactive experiences and brand identities.", "h1a": "We build digital experiences", "h1b": "that move brands forward."}, "ha": {"skip": "Tsallake zuwa abubuwan da ke ciki", "nav_home": "Gida", "nav_services": "Hidimomi", "nav_work": "Ayyukanmu", "nav_process": "Tsari", "nav_about": "Game da Mu", "nav_contact": "Tuntuɓe Mu", "nav_cta": "Mu Yi Magana <span class=\"arr\" aria-hidden=\"true\">↗</span>", "eyebrow": "<span class=\"pulse\"></span> Tunani na ƙirƙira. Aiwatarwa mai hikima.", "hero_copy": "Muna mayar da manyan ra'ayoyi zuwa ƙwarewar dijital ta musamman — tun daga shafukan bukukuwa da taruka zuwa shafukan sauka da kuma alamar kasuwanci ta musamman.", "hero_start": "Fara aiki <span class=\"arr\" aria-hidden=\"true\">↗</span>", "hero_explore": "Duba ayyukanmu <span class=\"arr\" aria-hidden=\"true\">↓</span>", "micro": "<span class=\"micro-line\"></span> Dabara · Ƙira · Haɓakawa · Muna Najeriya, muna aiki a duniya baki ɗaya", "card_top": "Ƙwarewar dijital / 001", "card_bottom": "An ƙera shi don tasiri", "card_status": "● MISALI NA GASKE", "ai": "Da taimakon AI", "human": "Mutum ne ke jagora", "stat1": "Ƙira ce ke jagora", "stat1d": "Kowane dalla-dalla yana da manufa", "stat2d": "Ayyuka masu wayo da inganci", "stat3d": "Jagorar ƙirƙira mai tunani", "svc_k": "Abin da muke yi", "svc_h": "Mafita ta dijital da aka gina a kan <span class=\"gradient\">mataki na gaba naku.</span>", "svc_p": "Ko kuna farawa daga tushe ko kuna son ɗaga alamar kasuwancinku, muna haɗa dabara, ƙira da haɓakawa wuri guda.", "s1h": "Ƙirar Shafin Yanar Gizo da Haɓaka Shi", "s1p": "Shafukan yanar gizo masu dacewa da kowace na'ura, waɗanda ke bayyana darajarku kuma suna sauƙaƙa wa abokan ciniki ɗaukar mataki.", "s1a": "Shafukan kasuwanci da na kamfanoni", "s1b": "Shafukan sauka da na nuna ayyuka", "s1c": "Kasuwancin yanar gizo da sake ƙirar shafuka", "s2h": "Ƙwarewar Dijital Mai Hulɗa", "s2p": "Shafuka na musamman waɗanda ake tunawa da su, masu mayar da lokuta na musamman, kamfen da taruka zuwa ƙwarewa.", "s2a": "Shafukan ranar haihuwa, aure da neman aure", "s2b": "Shafukan taro da bukukuwa", "s2c": "Motsi da hulɗa na musamman", "s3h": "Alamar Kasuwanci da Ƙirar Ƙirƙira", "s3p": "Tsarin hoto mai daidaito da kayayyakin ƙirƙira da ke sa kasuwancinku ya yi kwarjini kuma a gane shi.", "s3a": "Ra'ayoyin siffar alama", "s3b": "Zane-zanen talla", "s3c": "Kayayyakin ƙira na kafafen sada zumunta", "s4h": "Kayayyakin Dijital", "s4p": "Kayan dijital masu amfani, shirye don gyarawa, waɗanda ke taimaka wa masu ƙirƙira da 'yan kasuwa su yi sauri.", "s4a": "Samfuran shafukan yanar gizo (templates)", "s4b": "Kayan dijital na kasuwanci", "s4c": "Kayan ƙirƙira da za a iya gyarawa", "wk_k": "Zaɓaɓɓun ayyuka", "wk_h": "Kyawawan ra'ayoyi sun cancanci <span class=\"gradient\">kyakkyawan aiwatarwa.</span>", "wk_p": "Zaɓin shafukan murna da na taro da Aether Timi ya gina. Buɗe kowane samfurin kai-tsaye don ganin yadda yake aiki.", "badge_bd": "Shafin ranar haihuwa", "badge_ev": "Shafin taro", "w1h": "Ranar Haihuwa ta Burgundy da Rose-Gold", "w1p": "Shafin ranar haihuwa mai dacewa da kowace na'ura, mai launin burgundy da rose-gold, wanda aka ƙera ya zama na kai.", "w2h": "Shafin Ranar Haihuwa na Tiana", "w2p": "Shafin ranar haihuwa na musamman mai kyan gani mai taushi da ƙayatattun bayanai.", "w3h": "iRave, Fitowar Oblee", "w3p": "Shafin taro da ke kafa yanayin nishaɗi kafin waƙar farko ta fara.", "live": "Samfurin kai-tsaye <span aria-hidden=\"true\">↗</span>", "wk_note": "Ƙarin ayyuka a GitHub: <a class=\"link\" href=\"https://github.com/aethertimi-ctrl/wedding-template\" target=\"_blank\" rel=\"noopener\">samfurin shafin aure</a> da <a class=\"link\" href=\"https://github.com/aethertimi-ctrl/a-proposal-for-prince-\" target=\"_blank\" rel=\"noopener\">shafin neman aure mai hulɗa</a>. &nbsp;<a class=\"link\" href=\"https://github.com/aethertimi-ctrl\" target=\"_blank\" rel=\"noopener\">Duba duk ayyuka a GitHub <span aria-hidden=\"true\">↗</span></a>", "pr_k": "Yadda muke aiki", "pr_h": "Tsari mai hikima. <span class=\"gradient\">Sakamako mafi kyau.</span>", "pr_p": "Sadarwa mai tsabta da isar da aiki cikin tsari na sa kowane aiki ya ci gaba a hanyar da ta dace.", "st1n": "01 / GANO", "st1h": "Fahimta", "st1p": "Muna koyon manufofinku, masu kallonku, buƙatunku da abin da nasara ya kamata ta kasance.", "st2n": "02 / ƘIRƘIRA", "st2h": "Ƙira", "st2p": "Muna tsara kyan gani da ƙwarewar da suka dace da alamar kasuwancinku da manufofinku.", "st3n": "03 / GINA", "st3h": "Haɓakawa", "st3p": "Muna ginawa, gyarawa da gwada ƙwarewar a wayar hannu, tablet da kwamfuta.", "st4n": "04 / ISAR", "st4h": "Ƙaddamarwa", "st4p": "Bayan kun duba kun amince, muna shirya aikinku don ƙaddamarwa da miƙa muku.", "ab_k": "Hanyar Aether Timi", "ab_h": "Fasaha mai ra'ayin <span class=\"gradient\">ɗan Adam.</span>", "ab_p": "Aether Timi kamfani ne mai zaman kansa na dijital, wanda aka gina a kan imani mai sauƙi: ya kamata fasaha ta ƙara ƙarfin kyawawan ra'ayoyi. Muna haɗa jagorancin ƙirƙira, kayan haɓakawa na zamani da tsarin aiki da taimakon AI, tare da barin hukuncin ɗan Adam a tsakiyar kowane shawara.", "pc1": "Manufa kafin ado", "pc1d": "Zaɓin ƙira yana goyon bayan manufa mai tsabta.", "pc2": "An gina don na'urori na gaske", "pc2d": "Ƙwarewa mai dacewa da girman allo daban-daban.", "pc3": "Da taimakon AI, ɗan Adam ya duba", "pc3d": "Inganci ba tare da rasa kulawa mai tunani ba.", "pc4": "Haɗin kai mai tsabta", "pc4d": "Iyaka, ra'ayi da matakan isarwa da aka bayyana.", "fd_label": "Wanda ya kafa", "fd_k": "Hankalin da ke bayan hangen nesa", "fd_h": "Mayar da ra'ayoyi zuwa <span class=\"gradient\">ƙwarewar dijital.</span>", "fd_h3": "Mutumin da ke bayan Aether Timi.", "fd_meta": "Timi · Yana Najeriya · Yana aiki da abokan ciniki a ko'ina", "fd_copy": "Ina da imani cewa kowace kyakkyawar ƙwarewar dijital tana farawa ne da ra'ayin da ya cancanci a tabbatar. Ta hanyar ƙirar shafuka mai tunani, haɓakawa na zamani da sabon ƙirƙira, ina gina ƙwarewar dijital da ke taimaka wa kasuwanci su kafa kansu su kuma yi fice a yanar gizo.", "fd_t1": "Ƙirar Shafuka", "fd_t2": "Haɓaka Shafuka", "fd_t3": "Sabon Ƙirƙirar Dijital", "fd_q": "“Muna Mayar da Ra'ayoyi zuwa Ƙwarewar Dijital.”", "fd_btn": "Mu gina wani abu mai ma'ana <span class=\"arr\" aria-hidden=\"true\">↗</span>", "cta_k": "Kuna da ra'ayi?", "cta_h": "Mu ƙirƙiri wani abu <span class=\"gradient\">da ya cancanci a tuna.</span>", "cta_p": "Gaya mana abin da kuke tunani. Za mu tattauna manufofinku da mafitar dijital da ta dace da mataki na gaba naku.", "cta_btn": "Yi mana magana a WhatsApp <span class=\"arr\" aria-hidden=\"true\">↗</span>", "ct_k": "Tuntuɓe mu", "ct_h": "Aikinku na gaba yana farawa <span class=\"gradient\">da tattaunawa.</span>", "ct_p": "Hanya mafi sauri ta tuntuɓar mu ita ce WhatsApp. Kuna son rubuta tukuna? Yi amfani da fom ɗin, zai buɗe saƙo da bayananku a shirye don aikawa.", "ct_social": "Ku same mu a", "fm_h": "Fara da ƴan bayanai", "fm_name": "Sunanku", "fm_email": "Imel ɗinku <span class=\"opt\">(ana buƙata don amsa ta imel)</span>", "fm_need": "Me kuke buƙata?", "fm_about": "Game da aikinku", "fm_wa": "Aika ta WhatsApp <span class=\"arr\" aria-hidden=\"true\">↗</span>", "fm_mail": "Aika ta imel", "fm_err": "Da fatan ku ƙara sunanku da taƙaitaccen saƙo kafin aikawa.", "ft_copy": "© <span id=\"year\">2026</span> Aether Timi. Duka haƙƙoƙi an kiyaye su.", "ft_work": "Ayyukanmu", "o1": "Shafin ranar haihuwa", "o2": "Shafin aure", "o3": "Shafin neman aure", "o4": "Shafin taro ko na sauka", "o5": "Shafin kasuwanci", "o6": "Alama da ƙira", "o7": "Wani abu daban", "ph_msg": "Menene dalili ko manufa, yaushe kuke buƙata, kuma wane kyan gani kuke so?", "lang_label": "Harshe", "menu_label": "Buɗe ko rufe jerin zaɓuɓɓuka", "theme_light": "Canza zuwa yanayin haske", "theme_dark": "Canza zuwa yanayin duhu", "sending": "Ana aikawa…", "sent": "Na gode! An aika saƙonku. Za mu amsa muku a {addr} nan ba da jimawa ba.", "bad_email": "Da fatan ku ƙara imel mai inganci don mu amsa.", "fail1": "Yi haƙuri, ba a aika ba. Da fatan ku ", "fail_link": "aiko mana imel kai-tsaye", "fail2": " ko ku yi amfani da WhatsApp.", "title": "Aether Timi — Ƙwarewar Dijital, Da Hikima", "meta_desc": "Aether Timi kamfani ne na dijital mai taimakon AI. Muna mayar da manyan ra'ayoyi zuwa ƙwarewar dijital ta musamman: shafukan yanar gizo, ƙwarewa masu hulɗa da alamomin kasuwanci.", "h1a": "Muna ƙirƙirar ƙwarewar dijital", "h1b": "da ke ciyar da kasuwanci gaba."}, "yo": {"skip": "Fò lọ sí àkóónú", "nav_home": "Ilé", "nav_services": "Àwọn Iṣẹ́", "nav_work": "Iṣẹ́ Wa", "nav_process": "Ìlànà", "nav_about": "Nípa Wa", "nav_contact": "Kàn Sí Wa", "nav_cta": "Ẹ Jẹ́ Ká Sọ̀rọ̀ <span class=\"arr\" aria-hidden=\"true\">↗</span>", "eyebrow": "<span class=\"pulse\"></span> Ìrònú àtinúdá. Ìṣe ọlọ́gbọ́n.", "hero_copy": "A ń sọ àwọn èrò ńlá di àwọn ìrírí díjítàlì àrà-ọ̀tọ̀ — láti àwọn ojú-òpó ayẹyẹ àti ìṣẹ̀lẹ̀ sí àwọn ojú-ìwé ìkọ́kọ́ àti àmì-ìdánimọ̀ ilé-iṣẹ́ tó yàtọ̀.", "hero_start": "Bẹ̀rẹ̀ iṣẹ́ àkànṣe <span class=\"arr\" aria-hidden=\"true\">↗</span>", "hero_explore": "Wo àwọn iṣẹ́ wa <span class=\"arr\" aria-hidden=\"true\">↓</span>", "micro": "<span class=\"micro-line\"></span> Ètò · Àwòrán · Ìdàgbàsókè · A wà ní Nàìjíríà, a ń ṣiṣẹ́ káàkiri àgbáyé", "card_top": "Ìrírí díjítàlì / 001", "card_bottom": "A ṣe é fún ipa", "card_status": "● ÈRÒ TÓ WÀ LÁÀYÈ", "ai": "Pẹ̀lú ìrànlọ́wọ́ AI", "human": "Ènìyàn ló ń darí", "stat1": "Àwòrán ló ń darí", "stat1d": "Gbogbo àlàyé ní ìdí", "stat2d": "Ìṣiṣẹ́ tó rọrùn, tó sì gbéṣẹ́", "stat3d": "Ìdarí àtinúdá tó ní ìrònú", "svc_k": "Ohun tí a ń ṣe", "svc_h": "Àwọn ojútùú díjítàlì tí a kọ́ yí <span class=\"gradient\">ìgbésẹ̀ rẹ tó kàn ká.</span>", "svc_p": "Yálà o ń bẹ̀rẹ̀ láti òfo tàbí o ṣetán láti gbé ilé-iṣẹ́ rẹ ga, a ń mú ètò, àwòrán àti ìdàgbàsókè papọ̀.", "s1h": "Àwòrán àti Ìdàgbàsókè Ojú-òpó Wẹ́ẹ̀bù", "s1p": "Àwọn ojú-òpó wẹ́ẹ̀bù tó ń ṣe déédé lórí gbogbo ẹ̀rọ, tó ń fi iye iṣẹ́ rẹ hàn, tó sì ń mú kí ó rọrùn fún àwọn oníbàárà láti gbé ìgbésẹ̀.", "s1a": "Àwọn ojú-òpó iṣẹ́-ajé àti ti ilé-iṣẹ́", "s1b": "Àwọn ojú-ìwé ìkọ́kọ́ àti àpò-iṣẹ́", "s1c": "Ìtajà orí ayélujára àti àtúnṣe ojú-òpó", "s2h": "Àwọn Ìrírí Díjítàlì Oníbáṣepọ̀", "s2p": "Àwọn ojú-òpó àdáni tó ṣe é rántí, tó ń sọ àwọn àkókò pàtàkì, ìpolówó àti ayẹyẹ di ìrírí.", "s2a": "Àwọn ojú-òpó ọjọ́ ìbí, ìgbéyàwó àti ìdábàá ìgbéyàwó", "s2b": "Àwọn ojú-ìwé ayẹyẹ àti ìṣẹ̀lẹ̀", "s2c": "Àwọn ìṣípòpadà àti ìbáṣepọ̀ àdáni", "s3h": "Àmì-ìdánimọ̀ àti Àwòrán Àtinúdá", "s3p": "Àwọn ètò àwòrán tó dúró déédé àti àwọn ohun-èlò àtinúdá tó ń jẹ́ kí iṣẹ́ rẹ dà bí tó ní ìgboyà tí a sì lè dá mọ̀.", "s3a": "Àwọn èrò àmì-ìdánimọ̀", "s3b": "Àwọn àwòrán ìpolówó", "s3c": "Àwọn ohun-èlò àwòrán fún orí ìkànnì àjọlò", "s4h": "Àwọn Ọjà Díjítàlì", "s4p": "Àwọn ohun-èlò díjítàlì tó wúlò, tó ṣetán láti ṣe àtúnṣe, tí ń ran àwọn aláàtinúdá àti àwọn oníṣòwò lọ́wọ́ láti yára.", "s4a": "Àwọn àwòṣe ojú-òpó wẹ́ẹ̀bù", "s4b": "Àwọn ohun-èlò díjítàlì fún iṣẹ́-ajé", "s4c": "Àwọn ohun-èlò àtinúdá tí a lè ṣe àtúnṣe", "wk_k": "Àwọn iṣẹ́ àyànfẹ́", "wk_h": "Àwọn èrò rere yẹ fún <span class=\"gradient\">ìṣe tó dára gan-an.</span>", "wk_p": "Àyànfẹ́ àwọn ojú-òpó ayẹyẹ àti ìṣẹ̀lẹ̀ tí Aether Timi kọ́. Ṣí àpẹẹrẹ ààyè kankan láti rí i ní ìṣe.", "badge_bd": "Ojú-òpó ọjọ́ ìbí", "badge_ev": "Ojú-òpó ìṣẹ̀lẹ̀", "w1h": "Ọjọ́ Ìbí Burgundy àti Rose-Gold", "w1p": "Ojú-òpó ọjọ́ ìbí tó ń ṣe déédé lórí gbogbo ẹ̀rọ ní àwọ̀ burgundy àti rose-gold, tí a kọ́ kí ó lè jẹ́ ti ara ẹni.", "w2h": "Ojú-òpó Ọjọ́ Ìbí Tiana", "w2p": "Ojú-òpó ọjọ́ ìbí àdáni tó ní ìrísí rírọ̀, onífẹ̀ẹ́ àti àwọn àlàyé tí a ronú lé lórí.", "w3h": "iRave, Àtẹ̀jáde Oblee", "w3p": "Ojú-ìwé ìṣẹ̀lẹ̀ tó ń gbé ayé ayẹyẹ ró kí orin àkọ́kọ́ tó bẹ̀rẹ̀.", "live": "Àpẹẹrẹ ní ààyè <span aria-hidden=\"true\">↗</span>", "wk_note": "Ìyókù lórí GitHub: <a class=\"link\" href=\"https://github.com/aethertimi-ctrl/wedding-template\" target=\"_blank\" rel=\"noopener\">àwòṣe ojú-òpó ìgbéyàwó</a> àti <a class=\"link\" href=\"https://github.com/aethertimi-ctrl/a-proposal-for-prince-\" target=\"_blank\" rel=\"noopener\">ojú-ìwé ìdábàá ìgbéyàwó oníbáṣepọ̀</a>. &nbsp;<a class=\"link\" href=\"https://github.com/aethertimi-ctrl\" target=\"_blank\" rel=\"noopener\">Wo gbogbo iṣẹ́ lórí GitHub <span aria-hidden=\"true\">↗</span></a>", "pr_k": "Bí a ṣe ń ṣiṣẹ́", "pr_h": "Ìlànà tó ní ìrònú. <span class=\"gradient\">Èsì tó dára jù.</span>", "pr_p": "Ìbánisọ̀rọ̀ tó yé kedere àti ìfijíṣẹ́ tó ní ètò ń jẹ́ kí iṣẹ́ kọ̀ọ̀kan máa tẹ̀ síwájú ní ọ̀nà tó tọ́.", "st1n": "01 / ÀWÁRÍ", "st1h": "Òye", "st1p": "A ń kọ́ nípa àwọn ibi-àfẹ́dé rẹ, àwọn olùwòran, àwọn ohun tí o nílò àti ohun tí àṣeyọrí yẹ kó jẹ́.", "st2n": "02 / ṢẸ̀DÁ", "st2h": "Àwòrán", "st2p": "A ń ṣe ìrísí àti ìrírí tó bá ilé-iṣẹ́ àti ibi-àfẹ́dé rẹ mu.", "st3n": "03 / KỌ́", "st3h": "Ìdàgbàsókè", "st3p": "A ń kọ́, tún ṣe, a sì dán ìrírí náà wò lórí fóònù, tábìlẹ́ẹ̀tì àti kọ̀ǹpútà.", "st4n": "04 / FIJÍṢẸ́", "st4h": "Ìṣàgbékalẹ̀", "st4p": "Lẹ́yìn àyẹ̀wò àti ìfọwọ́sí rẹ, a ń múra iṣẹ́ rẹ sílẹ̀ fún ìṣàgbékalẹ̀ àti ìfìlà.", "ab_k": "Ọ̀nà Aether Timi", "ab_h": "Ìmọ̀-ẹ̀rọ pẹ̀lú <span class=\"gradient\">ojú-ìwòye ènìyàn.</span>", "ab_p": "Aether Timi jẹ́ ilé-iṣẹ́ díjítàlì aládàáni tí a kọ́ lórí ìgbàgbọ́ kan ṣoṣo: ìmọ̀-ẹ̀rọ yẹ kí ó mú àwọn èrò rere lágbára síi. A ń so ìdarí àtinúdá, àwọn irinṣẹ́ ìdàgbàsókè òde-òní àti ìṣiṣẹ́ pẹ̀lú ìrànlọ́wọ́ AI pọ̀, a sì ń jẹ́ kí ìdájọ́ ènìyàn wà láàrín gbogbo ìpinnu.", "pc1": "Ète ṣáájú ọ̀ṣọ́", "pc1d": "Àwọn àṣàyàn àwòrán ń ṣe àtìlẹ́yìn fún ibi-àfẹ́dé tó yé.", "pc2": "A kọ́ fún àwọn ẹ̀rọ gidi", "pc2d": "Àwọn ìrírí tó ń ṣe déédé lórí oríṣiríṣi ìwọ̀n ojú-ìbòjú.", "pc3": "AI ràn lọ́wọ́, ènìyàn yẹ̀ wò", "pc3d": "Ìṣiṣẹ́ yíyára láìsí pé a pàdánù ìfojúsùn tó ní ìrònú.", "pc4": "Ìbáṣiṣẹ́pọ̀ tó yé kedere", "pc4d": "Àlà iṣẹ́, èsì àti àwọn ìgbésẹ̀ ìfijíṣẹ́ tí a ti ṣàlàyé.", "fd_label": "Olùdásílẹ̀", "fd_k": "Ọkàn tó wà lẹ́yìn ìran", "fd_h": "Yí àwọn èrò padà sí <span class=\"gradient\">àwọn ìrírí díjítàlì.</span>", "fd_h3": "Ẹni tó wà lẹ́yìn Aether Timi.", "fd_meta": "Timi · Ó wà ní Nàìjíríà · Ó ń ṣiṣẹ́ pẹ̀lú àwọn oníbàárà níbikíbi", "fd_copy": "Mo gbàgbọ́ pé gbogbo ìrírí díjítàlì tó dára ń bẹ̀rẹ̀ pẹ̀lú èrò tó yẹ láti mú wá sí ìyè. Nípasẹ̀ àwòrán ojú-òpó tó ní ìrònú, ìdàgbàsókè òde-òní àti àtinúdá tuntun, mo ń kọ́ àwọn ìrírí díjítàlì tó ń ran àwọn oníṣòwò lọ́wọ́ láti fi ìdí múlẹ̀ kí wọ́n sì yọrí sí i lórí ayélujára.", "fd_t1": "Àwòrán Ojú-òpó", "fd_t2": "Ìdàgbàsókè Ojú-òpó", "fd_t3": "Àtinúdá Díjítàlì", "fd_q": "“A Ń Sọ Àwọn Èrò Di Ìrírí Díjítàlì.”", "fd_btn": "Ẹ jẹ́ ká kọ́ nǹkan tó nítumọ̀ <span class=\"arr\" aria-hidden=\"true\">↗</span>", "cta_k": "Ǹjẹ́ o ní èrò?", "cta_h": "Ẹ jẹ́ ká ṣẹ̀dá nǹkan <span class=\"gradient\">tó yẹ láti rántí.</span>", "cta_p": "Sọ ohun tí o ní lọ́kàn fún wa. A ó jíròrò àwọn ibi-àfẹ́dé rẹ àti ojútùú díjítàlì tó tọ́ fún ìgbésẹ̀ rẹ tó kàn.", "cta_btn": "Bá wa sọ̀rọ̀ lórí WhatsApp <span class=\"arr\" aria-hidden=\"true\">↗</span>", "ct_k": "Kàn sí wa", "ct_h": "Iṣẹ́ rẹ tó kàn bẹ̀rẹ̀ <span class=\"gradient\">pẹ̀lú ọ̀rọ̀ ẹnu.</span>", "ct_p": "Ọ̀nà tó yára jù láti kàn sí wa ni WhatsApp. Ṣé o fẹ́ kọ ọ́ sílẹ̀ ná? Lo fọ́ọ̀mù náà, yóò ṣí ìfiránṣẹ́ pẹ̀lú àlàyé rẹ tí ó ṣetán láti fi ránṣẹ́.", "ct_social": "Ẹ rí wa lórí", "fm_h": "Bẹ̀rẹ̀ pẹ̀lú àlàyé díẹ̀", "fm_name": "Orúkọ rẹ", "fm_email": "Ímẹ́ìlì rẹ <span class=\"opt\">(a nílò rẹ̀ láti dáhùn nípasẹ̀ ímẹ́ìlì)</span>", "fm_need": "Kí ni o nílò?", "fm_about": "Nípa iṣẹ́ rẹ", "fm_wa": "Fi ránṣẹ́ lórí WhatsApp <span class=\"arr\" aria-hidden=\"true\">↗</span>", "fm_mail": "Fi ránṣẹ́ nípasẹ̀ ímẹ́ìlì", "fm_err": "Jọ̀wọ́ fi orúkọ rẹ àti àkọsílẹ̀ kúkúrú kún un kí o tó fi ránṣẹ́.", "ft_copy": "© <span id=\"year\">2026</span> Aether Timi. Gbogbo ẹ̀tọ́ wà ní ìpamọ́.", "ft_work": "Iṣẹ́ Wa", "o1": "Ojú-òpó ọjọ́ ìbí", "o2": "Ojú-òpó ìgbéyàwó", "o3": "Ojú-ìwé ìdábàá ìgbéyàwó", "o4": "Ojú-ìwé ìṣẹ̀lẹ̀ tàbí ìkọ́kọ́", "o5": "Ojú-òpó iṣẹ́-ajé", "o6": "Àmì-ìdánimọ̀ àti àwòrán", "o7": "Ohun mìíràn", "ph_msg": "Kí ni ayẹyẹ tàbí ibi-àfẹ́dé, ìgbà wo ni o nílò rẹ̀, àti irú ìrísí wo ni o ní lọ́kàn?", "lang_label": "Èdè", "menu_label": "Ṣí tàbí ti àtòjọ ọ̀nà", "theme_light": "Yípadà sí àwòrán ìmọ́lẹ̀", "theme_dark": "Yípadà sí àwòrán òkùnkùn", "sending": "Ń fi ránṣẹ́…", "sent": "O ṣeun! A ti fi ìfiránṣẹ́ rẹ ránṣẹ́. A ó dá ọ lóhùn ní {addr} láìpẹ́.", "bad_email": "Jọ̀wọ́ fi ímẹ́ìlì tó tọ́ kún un kí a lè dá ọ lóhùn.", "fail1": "Má bínú, kò lọ. Jọ̀wọ́ ", "fail_link": "fi ímẹ́ìlì ránṣẹ́ sí wa taara", "fail2": " tàbí lo WhatsApp.", "title": "Aether Timi — Àwọn Ìrírí Díjítàlì, Tí A Ṣe Pẹ̀lú Ọgbọ́n", "meta_desc": "Aether Timi jẹ́ ilé-iṣẹ́ díjítàlì tí AI ń ràn lọ́wọ́. A ń sọ àwọn èrò ńlá di ìrírí díjítàlì àrà-ọ̀tọ̀: ojú-òpó wẹ́ẹ̀bù, àwọn ìrírí oníbáṣepọ̀ àti àmì-ìdánimọ̀ ilé-iṣẹ́.", "h1a": "A ń kọ́ àwọn ìrírí díjítàlì", "h1b": "tí ń gbé àwọn ilé-iṣẹ́ síwájú."}, "ig": {"skip": "Wụga gaa na ọdịnaya", "nav_home": "Ụlọ", "nav_services": "Ọrụ Anyị", "nav_work": "Ihe Anyị Rụrụ", "nav_process": "Usoro", "nav_about": "Maka Anyị", "nav_contact": "Kpọtụrụ Anyị", "nav_cta": "Ka Anyị Kparịta <span class=\"arr\" aria-hidden=\"true\">↗</span>", "eyebrow": "<span class=\"pulse\"></span> Echiche okike. Mmezu amamihe.", "hero_copy": "Anyị na-agbanwe echiche ukwu ka ọ bụrụ ahụmịhe dijitalụ pụrụ iche — site na webụsaịtị ememe na mmemme ruo na ibe ntụ na akara ụdị azụmahịa pụrụ iche.", "hero_start": "Malite ọrụ <span class=\"arr\" aria-hidden=\"true\">↗</span>", "hero_explore": "Lee ọrụ anyị <span class=\"arr\" aria-hidden=\"true\">↓</span>", "micro": "<span class=\"micro-line\"></span> Atụmatụ · Imewe · Mmepe · Anyị nọ na Naịjirịa, na-arụ ọrụ n'ụwa niile", "card_top": "Ahụmịhe dijitalụ / 001", "card_bottom": "E mere ya maka mmetụta", "card_status": "● ECHICHE DỊ NDỤ", "ai": "Nwere enyemaka AI", "human": "Mmadụ na-eduzi", "stat1": "Imewe na-eduzi", "stat1d": "Nkọwa niile nwere ebumnuche", "stat2d": "Usoro ọrụ dị mfe ma dị irè", "stat3d": "Nduzi okike nke nwere echiche", "svc_k": "Ihe anyị na-eme", "svc_h": "Ngwọta dijitalụ e wuru gburugburu <span class=\"gradient\">ije gị na-esote.</span>", "svc_p": "Ma ị na-amalite site na efu ma ọ bụ ị dị njikere ịrị elu akara azụmahịa dị adị, anyị na-ejikọta atụmatụ, imewe na mmepe n'otu ebe.", "s1h": "Imewe na Mmepe Webụsaịtị", "s1p": "Webụsaịtị na-adaba na ngwaọrụ niile, na-egosipụta uru gị ma na-eme ka ọ dị mfe ndị ahịa ịme ihe.", "s1a": "Webụsaịtị azụmahịa na nke ụlọ ọrụ", "s1b": "Ibe ntụ na ebe ngosi ọrụ", "s1c": "Ahịa n'ịntanetị na imegharị webụsaịtị", "s2h": "Ahụmịhe Dijitalụ Na-emekọrịta Ihe", "s2p": "Webụsaịtị pụrụ iche, a na-echeta, nke na-agbanwe oge pụrụ iche, mgbasa ozi na mmemme ka ọ bụrụ ahụmịhe.", "s2a": "Webụsaịtị ụbọchị ọmụmụ, agbamakwụkwọ na ịrịọ aka", "s2b": "Ibe ntụ maka mmemme na ememe", "s2c": "Mmegharị na mmekọrịta pụrụ iche", "s3h": "Akara Azụmahịa na Imewe Okike", "s3p": "Usoro ọhụụ kwụsiri ike na akụrụngwa okike na-enyere azụmahịa gị aka ịdị ike ma a mara ya.", "s3a": "Echiche akara ụdị", "s3b": "Eserese mgbasa ozi", "s3c": "Akụrụngwa imewe maka mgbasa ozi mmekọrịta", "s4h": "Ngwaahịa Dijitalụ", "s4p": "Akụrụngwa dijitalụ bara uru, dị njikere ịgbanwe, nke na-enyere ndị okike na ndị azụmahịa aka ịgbasi ọsọ.", "s4a": "Ụdịrị webụsaịtị (templates)", "s4b": "Akụrụngwa dijitalụ maka azụmahịa", "s4c": "Akụrụngwa okike e nwere ike ịgbanwe", "wk_k": "Ọrụ ahọpụtara", "wk_h": "Echiche ọma kwesịrị <span class=\"gradient\">mmezu magburu onwe ya.</span>", "wk_p": "Nhọrọ webụsaịtị ememe na mmemme nke Aether Timi wuru. Mepee ngosipụta ọ bụla dị ndụ ka ịhụ ya ka ọ na-arụ ọrụ.", "badge_bd": "Webụsaịtị ụbọchị ọmụmụ", "badge_ev": "Webụsaịtị mmemme", "w1h": "Ụbọchị Ọmụmụ Burgundy na Rose-Gold", "w1p": "Webụsaịtị ụbọchị ọmụmụ na-adaba na ngwaọrụ niile n'agba burgundy na rose-gold, e wuru ka ọ dị ka nke onwe.", "w2h": "Webụsaịtị Ụbọchị Ọmụmụ Tiana", "w2p": "Webụsaịtị ụbọchị ọmụmụ e mere nke onwe nwere ọdịdị dị nro, na-ekpo ọkụ na nkọwa e chere echiche.", "w3h": "iRave, Mbipụta Oblee", "w3p": "Ibe mmemme na-ewepụta ọnọdụ ọṅụ tupu egwu mbụ amalite.", "live": "Ngosipụta dị ndụ <span aria-hidden=\"true\">↗</span>", "wk_note": "Ndị ọzọ na GitHub: <a class=\"link\" href=\"https://github.com/aethertimi-ctrl/wedding-template\" target=\"_blank\" rel=\"noopener\">ụdịrị agbamakwụkwọ</a> na <a class=\"link\" href=\"https://github.com/aethertimi-ctrl/a-proposal-for-prince-\" target=\"_blank\" rel=\"noopener\">ibe ịrịọ aka na-emekọrịta ihe</a>. &nbsp;<a class=\"link\" href=\"https://github.com/aethertimi-ctrl\" target=\"_blank\" rel=\"noopener\">Lee ọrụ niile na GitHub <span aria-hidden=\"true\">↗</span></a>", "pr_k": "Otu anyị si arụ ọrụ", "pr_h": "Usoro nwere echiche. <span class=\"gradient\">Nsonaazụ ka mma.</span>", "pr_p": "Mmekọrịta doro anya na nnyefe nwere usoro na-eme ka ọrụ ọ bụla na-aga n'ihu n'ụzọ ziri ezi.", "st1n": "01 / MEPỤTA", "st1h": "Aghọta", "st1p": "Anyị na-amụta ebumnuche gị, ndị na-ahụ ya, ihe ị chọrọ na ihe ịga nke ọma kwesịrị ịbụ.", "st2n": "02 / KE", "st2h": "Imewe", "st2p": "Anyị na-ewepụta ọdịdị na ahụmịhe dabara n'akara azụmahịa gị na ebumnuche gị.", "st3n": "03 / WUO", "st3h": "Mmepe", "st3p": "Anyị na-ewu, na-emezi ma na-anwale ahụmịhe ahụ na ekwentị, tablet na kọmputa.", "st4n": "04 / NYEFE", "st4h": "Mbido", "st4p": "Mgbe ị lechara ma kwenye, anyị na-akwado ọrụ gị maka mbido na nnyefe.", "ab_k": "Ụzọ Aether Timi", "ab_h": "Teknụzụ nwere <span class=\"gradient\">echiche mmadụ.</span>", "ab_p": "Aether Timi bụ ụlọ ọrụ dijitalụ nweere onwe ya e wuru n'otu nkwenye dị mfe: teknụzụ kwesịrị ime ka echiche ọma sie ike. Anyị na-ejikọta nduzi okike, ngwa mmepe nke oge a na usoro ọrụ nwere enyemaka AI, ebe anyị na-edebe ikpe mmadụ n'etiti mkpebi ọ bụla.", "pc1": "Ebumnuche tupu ịchọ mma", "pc1d": "Nhọrọ imewe na-akwado ebumnuche doro anya.", "pc2": "E wuru maka ngwaọrụ n'ezie", "pc2d": "Ahụmịhe na-adaba n'ogo ihuenyo dị iche iche.", "pc3": "AI nyere aka, mmadụ lelere", "pc3d": "Ịrụ ọrụ nke ọma n'enweghị ichefu nlekọta nwere echiche.", "pc4": "Mmekorita doro anya", "pc4d": "Oke ọrụ, nzaghachi na nzọụkwụ nnyefe a kọwara.", "fd_label": "Onye Tọrọ Ntọala", "fd_k": "Uche dị n'azụ ọhụụ", "fd_h": "Ịgbanwe echiche ka ọ bụrụ <span class=\"gradient\">ahụmịhe dijitalụ.</span>", "fd_h3": "Onye nọ n'azụ Aether Timi.", "fd_meta": "Timi · Nọ na Naịjirịa · Na-arụkọ ọrụ na ndị ahịa ebe ọ bụla", "fd_copy": "Ekwere m na ahụmịhe dijitalụ ọ bụla dị mma na-amalite site na echiche kwesịrị ịkwado ya. Site na imewe webụsaịtị nwere echiche, mmepe nke oge a na ihe ọhụrụ okike, m na-ewu ahụmịhe dijitalụ na-enyere azụmahịa aka ịmepụta ọnụnọ ha ma pụta ìhè n'ịntanetị.", "fd_t1": "Imewe Webụsaịtị", "fd_t2": "Mmepe Webụsaịtị", "fd_t3": "Ihe Ọhụrụ Dijitalụ", "fd_q": "“Anyị Na-agbanwe Echiche Ka Ọ Bụrụ Ahụmịhe Dijitalụ.”", "fd_btn": "Ka anyị wuo ihe bara uru <span class=\"arr\" aria-hidden=\"true\">↗</span>", "cta_k": "Ị nwere echiche?", "cta_h": "Ka anyị mepụta ihe <span class=\"gradient\">kwesịrị icheta.</span>", "cta_p": "Gwa anyị ihe ị na-eche. Anyị ga-atụle ebumnuche gị na ngwọta dijitalụ kwesịrị ntụkwasị obi maka nzọụkwụ gị na-esote.", "cta_btn": "Kparịta anyị na WhatsApp <span class=\"arr\" aria-hidden=\"true\">↗</span>", "ct_k": "Kpọtụrụ anyị", "ct_h": "Ọrụ gị na-esote na-amalite <span class=\"gradient\">site na mkparịta ụka.</span>", "ct_p": "Ụzọ kachasị ngwa iru anyị bụ WhatsApp. Ị chọrọ ide ya ala buru ụzọ? Jiri ụdị ahụ, ọ ga-emeghe ozi nwere nkọwa gị dị njikere iziga.", "ct_social": "Chọta anyị na", "fm_h": "Malite site n'obere nkọwa", "fm_name": "Aha gị", "fm_email": "Email gị <span class=\"opt\">(achọrọ iji zaghachi site na email)</span>", "fm_need": "Gịnị ka ị chọrọ?", "fm_about": "Banyere ọrụ gị", "fm_wa": "Zipu na WhatsApp <span class=\"arr\" aria-hidden=\"true\">↗</span>", "fm_mail": "Zipu site na email", "fm_err": "Biko tinye aha gị na obere ozi tupu ịzipu.", "ft_copy": "© <span id=\"year\">2026</span> Aether Timi. Echekwabara ikike niile.", "ft_work": "Ihe Anyị Rụrụ", "o1": "Webụsaịtị ụbọchị ọmụmụ", "o2": "Webụsaịtị agbamakwụkwọ", "o3": "Ibe ịrịọ aka", "o4": "Ibe mmemme ma ọ bụ ibe ntụ", "o5": "Webụsaịtị azụmahịa", "o6": "Akara ụdị na imewe", "o7": "Ihe ọzọ", "ph_msg": "Gịnị bụ ememe ma ọ bụ ebumnuche, mgbe ị chọrọ ya, na kedu ọdịdị ị nwere n'uche?", "lang_label": "Asụsụ", "menu_label": "Mepee ma ọ bụ mechie nchịkọta", "theme_light": "Gbanwee gaa n'ụdị ìhè", "theme_dark": "Gbanwee gaa n'ụdị ọchịchịrị", "sending": "Na-ezipu…", "sent": "Daalụ! E zigara ozi gị. Anyị ga-azaghachi gị na {addr} n'oge na-adịghị anya.", "bad_email": "Biko tinye email ziri ezi ka anyị nwee ike zaghachi.", "fail1": "Ewela iwe, ọ gaghị. Biko ", "fail_link": "zipu anyị email ozugbo", "fail2": " ma ọ bụ jiri WhatsApp.", "title": "Aether Timi — Ahụmịhe Dijitalụ, E Mere Ya N'amamihe", "meta_desc": "Aether Timi bụ ụlọ ọrụ dijitalụ nwere enyemaka AI. Anyị na-agbanwe echiche ukwu ka ọ bụrụ ahụmịhe dijitalụ pụrụ iche: webụsaịtị, ahụmịhe na-emekọrịta ihe na akara ụdị azụmahịa.", "h1a": "Anyị na-ewu ahụmịhe dijitalụ", "h1b": "nke na-eme ka ụdị azụmahịa gaa n'ihu."}};
+      var LANGS = ['en','ha','yo','ig'], lang = 'en', langSel = $('#langSel');
+      function t(key, vars){
+        var v = (I18N[lang] && I18N[lang][key]) || I18N.en[key] || key;
+        if (vars) for (var k in vars) v = v.replace('{' + k + '}', vars[k]);
+        return v;
+      }
+      function setH1(){
+        var h = $('#h1'); if (!h) return;
+        var mk = function(txt, off){ return txt.split(' ').map(function(w, i){ return '<span class="w" style="--i:' + (off + i) + '" aria-hidden="true">' + w + '</span>'; }).join(' '); };
+        var a = t('h1a'), b = t('h1b');
+        h.innerHTML = mk(a, 0) + ' <span class="gradient">' + mk(b, a.split(' ').length) + '</span>';
+        h.setAttribute('aria-label', a + ' ' + b);
+      }
+      function applyLang(l, save){
+        if (LANGS.indexOf(l) < 0) l = 'en';
+        var changed = l !== lang; lang = l;
+        document.documentElement.setAttribute('lang', l);
+        $$('[data-i18n]').forEach(function(el){ el.innerHTML = t(el.getAttribute('data-i18n')); });
+        $$('[data-i18n-ph]').forEach(function(el){ el.setAttribute('placeholder', t(el.getAttribute('data-i18n-ph'))); });
+        $$('[data-i18n-aria]').forEach(function(el){ el.setAttribute('aria-label', t(el.getAttribute('data-i18n-aria'))); });
+        if (changed) setH1();
+        document.title = t('title');
+        var md = $('meta[name="description"]'); if (md) md.setAttribute('content', t('meta_desc'));
+        var yr = $('#year'); if (yr) yr.textContent = new Date().getFullYear();
+        if (langSel) langSel.value = l;
+        applyTheme(root.getAttribute('data-theme') || 'dark', false);
+        if (save) { try { localStorage.setItem('aether-lang', l); } catch (e) {} }
+      }
+      (function(){
+        var q = null, saved = null;
+        try { q = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+        try { saved = localStorage.getItem('aether-lang'); } catch (e) {}
+        var start = LANGS.indexOf(q) >= 0 ? q : (LANGS.indexOf(saved) >= 0 ? saved : 'en');
+        if (start !== 'en') applyLang(start, false);
+        if (langSel) { langSel.value = start; langSel.addEventListener('change', function(){ applyLang(langSel.value, true); }); }
+      })();
+
       /* contact form -> WhatsApp or email */
       var WA = '2348139342375', EMAIL = 'Aethertimi@gmail.com';
       var form = $('#project-form');
@@ -784,15 +838,15 @@
           var b = build(); err.hidden = b.ok; status.hidden = true;
           if (!b.ok) return;
           var addr = String(new FormData(form).get('email')||'').trim();
-          if (!addr || !$('#f-email').checkValidity()) { say('Please add a valid email address so we can reply.', true); $('#f-email').focus(); return; }
-          var label = emailBtn.textContent; emailBtn.disabled = true; emailBtn.textContent = 'Sending…';
+          if (!addr || !$('#f-email').checkValidity()) { say(t('bad_email'), true); $('#f-email').focus(); return; }
+          var label = emailBtn.textContent; emailBtn.disabled = true; emailBtn.textContent = t('sending');
           var data = new FormData(form); data.append('_subject', 'Project Enquiry: ' + b.service);
           fetch(FORMSPREE, {method:'POST', body:data, headers:{'Accept':'application/json'}})
-            .then(function(r){ if(!r.ok) throw new Error(r.status); form.reset(); say('Thank you! Your message has been sent. We will reply to ' + addr + ' soon.'); })
+            .then(function(r){ if(!r.ok) throw new Error(r.status); form.reset(); say(t('sent', {addr: addr})); })
             .catch(function(){
-              status.textContent = 'Sorry, that did not send. Please '; status.className = 'form-status bad';
-              var a = document.createElement('a'); a.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Project Enquiry: ' + b.service) + '&body=' + encodeURIComponent(b.text); a.textContent = 'email us directly';
-              status.appendChild(a); status.appendChild(document.createTextNode(' or use WhatsApp.')); status.hidden = false;
+              status.textContent = t('fail1'); status.className = 'form-status bad';
+              var a = document.createElement('a'); a.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Project Enquiry: ' + b.service) + '&body=' + encodeURIComponent(b.text); a.textContent = t('fail_link');
+              status.appendChild(a); status.appendChild(document.createTextNode(t('fail2'))); status.hidden = false;
             })
             .then(function(){ emailBtn.disabled = false; emailBtn.textContent = label; });
         });

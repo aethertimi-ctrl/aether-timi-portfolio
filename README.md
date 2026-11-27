@@ -31,3 +31,9 @@ Each card in the Work section has a "Live demo coming soon" label. Once a projec
 - WhatsApp: +234 813 934 2375 (https://wa.me/2348139342375)
 - Email: Aethertimi@gmail.com
 - GitHub: https://github.com/aethertimi-ctrl · X: https://x.com/AetherTimi · LinkedIn: https://www.linkedin.com/in/aether-timi
+
+## Languages
+The site switches between English, Hausa, Yorùbá and Igbo (globe menu in the header). All text lives in the
+`I18N` object in the script at the bottom of `index.html`; elements carry `data-i18n="key"`. A visitor's choice is
+remembered, and `?lang=ha`, `?lang=yo` or `?lang=ig` opens the site in that language. Translations were drafted by AI
+and should be checked by a native speaker.
